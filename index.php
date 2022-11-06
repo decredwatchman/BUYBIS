@@ -21,25 +21,25 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
     <link rel="stylesheet" href="assets/css/Simple-Slider.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <nav class="navbar  navbar-dark navbar-expand bg-primary navigation-clean">
-        <div class="container"><a class="navbar-brand" href="#">BUYBIS</a><button class="navbar-toggler" data-toggle="collapse"></button>
-            <span id="navcol-1"><div class="collapse navbar-collapse" id="navcol-1">
-             
-         
-    </div>
-    </nav>
-
-    <!-- moilenav -->
-    <nav class="mynav">
-        <span><a class="nav-links" href="index.html"><i class="material-icons">HOME</i></a></span>
-       <span><a class="nav-links" href="exchange.html"><i class="material-icons">TRADE</i></a></span>
-       <span><a class="nav-links" href="dashboard.html"><i class="material-icons">WALLET</i></a></span>
-    </nav>
-    <!-- ends here -->
+<div class="nav-bar">
+                  <div class="nav-section">
+                        <div class="con1">
+                              <span class="logoo">Wallet Overview</span>
+                        </div>
+                        <div class="con1">
+                              <div class="list  yellow"><a href="#" class="items yellow">Deposit</a></div>
+                              <div class="list"><a href="#" class="items">Withdraw</a></div>
+                              <div class="list"><a href="#" class="items">Send</a></div>
+                              <div class="list"><a href="#" class="items">Transfer</a></div>
+                              <div class="list"><a href="#" class="items">Transaction History</a></div>
+                        </div>
+                  </div>
+            </div>
     <div class="card">
         <div class="card-header">
             <ul class="nav nav-tabs card-header-tabs">
