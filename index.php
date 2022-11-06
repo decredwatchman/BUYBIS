@@ -25,181 +25,124 @@
 </head>
 
 <body>
+<style>
+  .nav-bar {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    
+}
 
+.nav-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+
+.logoo {
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.con1 {
+    display: flex;
+}
+
+.list {
+    padding: 8px 15px;
+    margin: 0px 10px;
+    border-radius: 3px;
+    background-color: white;
+}
+
+.items {
+    text-decoration: none;
+    font-size: 14px;
+  font-weight:bold;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+
+.section1 {
+    padding: 20px;
+}
+
+</style>
 <div class="nav-bar">
                   <div class="nav-section">
                         <div class="con1">
-                              <span class="logoo">Wallet Overview</span>
+                              <span class="logoo">Buybis</span>
                         </div>
                         <div class="con1">
-                              <div class="list  yellow"><a href="#" class="items yellow">Deposit</a></div>
+                              <!-- <div class="list  yellow"><a href="#" class="items yellow">Deposit</a></div>
                               <div class="list"><a href="#" class="items">Withdraw</a></div>
                               <div class="list"><a href="#" class="items">Send</a></div>
-                              <div class="list"><a href="#" class="items">Transfer</a></div>
-                              <div class="list"><a href="#" class="items">Transaction History</a></div>
+                              <div class="list"><a href="#" class="items">Transfer</a></div> -->
+                              <div class="list"><a href="user/" class="items">Register/login</a></div>
                         </div>
                   </div>
             </div>
-    <div class="card">
-        <div class="card-header">
-            <ul class="nav nav-tabs card-header-tabs">
-                <li class="nav-item"><a class="nav-link active" href="#">MY ASSETS</a></li>
-            </ul>
-        </div>
-        <div class="card-body " style="height: auto;width: 100%;">
-            <h4 class="card-title" style="font-size: 18PX;color: rgb(105,108,112);font-family: Aldrich, sans-serif;">WALLET OVERVIEW</h4>
-            <h4 class="card-title" style="line-height: 41px;letter-spacing: 2px;filter: blur(0px) brightness(14%) contrast(59%) grayscale(12%) hue-rotate(41deg);">$ 0.0000345&nbsp;</h4>
-            <h4 class="card-title" style="font-size: 12PX;color: rgb(105,108,112);font-family: Aldrich, sans-serif;">REFERRAL COMMISSION</h4>
-            <h4 class="card-title" style=" font-size: 15PX;line-height: 21px;letter-spacing: 2px;filter: blur(0px) brightness(14%) contrast(59%) grayscale(12%) hue-rotate(41deg);">$ 0.0000345&nbsp;</h4>
             
-                
-          <div class="card-title"><button class="btn bbt " type="button">Deposit</button><button class="btn bbt " type="button">Withdraw</button></div>
-               
-        
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100" src="assets/img/s2.jpg" alt="First slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="assets/img/s2.jpg" alt="Second slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="assets/img/s2.jpg" alt="Third slide">
+          </div>
         </div>
-    </div>
- <!-- DataTales Example -->
-
-    
-    <div class="card">
-        <div class="table-responsive">
-            <table class="table " id="dataTable" width="100%" cellspacing="0">
-                <thead>
-                    <tr>
-                        <th>TOKEN</th>
-                        <th>AMOUNT</th>
-                        
-                    </tr>
-                </thead>
-          
-                <tbody>
-                    <tr>
-                        <td>USDT</td>
-                        <td>$3070.00</td>
-                        
-                    </tr>
-                    <tr>
-                        <td>BUSD</td>
-                        <td>$3400.00</td>
-                        
-                    </tr>
-                    <tr>
-                        <td>USDC</td>
-                        <td>$3090.00</td>
-                        
-                    </tr>
-                    <tr>
-                        <td>BTC</td>
-                        <td>$300.00</td>
-                        
-                    </tr>
-                     <tr>
-                        <td>ETH</td>
-                        <td>$200.00</td>
-                 
-                    </tr>
-                    <tr>
-                        <td>SOLANA</td>
-                        <td>$200.00</td>
-                 
-                    </tr>
-                    <tr>
-                        <td>BUSD</td>
-                        <td>$3400.00</td>
-                        
-                    </tr>
-                    <tr>
-                        <td>USDC</td>
-                        <td>$3090.00</td>
-                        
-                    </tr>
-                    <tr>
-                        <td>BTC</td>
-                        <td>$300.00</td>
-                        
-                    </tr>
-                     <tr>
-                        <td>ETH</td>
-                        <td>$200.00</td>
-                 
-                    </tr>
-                    <tr>
-                        <td>SOLANA</td>
-                        <td>$200.00</td>
-                 
-                    </tr>
-                    <tr>
-                        <td>BUSD</td>
-                        <td>$3400.00</td>
-                        
-                    </tr>
-                    <tr>
-                        <td>USDC</td>
-                        <td>$3090.00</td>
-                        
-                    </tr>
-                    <tr>
-                        <td>BTC</td>
-                        <td>$300.00</td>
-                        
-                    </tr>
-                     <tr>
-                        <td>ETH</td>
-                        <td>$200.00</td>
-                 
-                    </tr>
-                    <tr>
-                        <td>SOLANA</td>
-                        <td>$200.00</td>
-                 
-                    </tr>
-                    <tr>
-                        <td>BUSD</td>
-                        <td>$3400.00</td>
-                        
-                    </tr>
-                    <tr>
-                        <td>USDC</td>
-                        <td>$3090.00</td>
-                        
-                    </tr>
-                    <tr>
-                        <td>BTC</td>
-                        <td>$300.00</td>
-                        
-                    </tr>
-                     <tr>
-                        <td>ETH</td>
-                        <td>$200.00</td>
-                 
-                    </tr>
-                    <tr>
-                        <td>SOLANA</td>
-                        <td>$200.00</td>
-                 
-                    </tr>
-
-
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-<!-- 
-    
-    <div class="form-group row pad">
-        <label class="col-sm-2 col-form-label">Referral Link</label>
-        <div class="col-sm-8">
-                <input type="text" class="form-control" id="myInput" value="link" readonly>
-            </div>
-         <button class="btn btn-secondary bg-gradient-primary btn-sm mar" onclick="myFunction()" onmouseout="outFunc()" >Copy Link</button>    
-         
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <!-- <span class="carousel-control-prev-icon" aria-hidden="true"></span> -->
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <!-- <span class="carousel-control-next-icon" aria-hidden="true"></span> -->
+          <span class="sr-only">Next</span>
+        </a>
       </div>
-  
-  <br>
-  <h5 class="pad"><center><code>
-  15 % affiliate commision on every deposit made from your referral.
-  </code></center></h5> -->
+
+    <div class="highlight-clean" style="padding-top: 30px;padding-bottom: 20px;">
+        <div class="container">
+            <div class="intro">
+                <h2 class="text-center">TRENDING</h2>
+            </div>
+            <div class="buttons"></div>
+        </div>
+    </div><div class="col">
+
+    <coingecko-coin-list-widget 
+     coin-ids="bitcoin,eos,ethereum,litecoin,ripple,usd,usdtez,tether,dogecoin"
+      currency="usd" locale="en" width="100%">
+
+    </coingecko-coin-list-widget>
+    
+
+<script src="https://widgets.coingecko.com/coingecko-coin-list-widget.js"></script>
+</div>
+    <section class="showcase">
+        <div class="container-fluid p-0">
+            <div class="row no-gutters"><div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image:url('assets/img/s2.jpg');"><span></span></div>
+
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text">
+                    <h2>Our commitment to your security</h2>
+                    <p class="lead mb-0">We always regard your security as our top priority. Our security team is constantly dedicated to refining and developing stringent state-of-the-art security measures. We are committed to safeguarding the security of our users and trading
+                        infrastructure.<br><br></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
