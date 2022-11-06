@@ -1,105 +1,209 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>BUYBIS</title>
-    <style>
-        *{
-    margin: 0;
-    font-family:  sans-serif;
-    color: #121619D9;
-}
-nav div span{
-    font-weight: 350;
-    font-size: 30px;
-    color: white;
-}
-
-nav{
-    background-color: #121619D9;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    color: white;
-}
-
-ul{
-    display: flex;
-    list-style: none;
-    padding: 18px;
-    
-}
-li{
-    padding: 0 20px;
-    color: #ffffffcc;
-}
-.hhy{
-    padding-top: 10px;
-    margin-left: 300px;
-    margin-right: 300px;
-    margin-bottom: 20px;
-}
-.tyt{
-    height: 400px;
-    
-}
-.ss{
-    background-color: #121619D9;
-}
-    </style>
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aladin">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aldrich">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya+Sans">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aleo">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/best-carousel-slide.css">
+    <link rel="stylesheet" href="assets/css/Footer-Basic.css">
+    <link rel="stylesheet" href="assets/css/Footer-Clean.css">
+    <link rel="stylesheet" href="assets/css/Highlight-Clean.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
+    <link rel="stylesheet" href="assets/css/Simple-Slider.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
-<header>
-        <nav>
-            <div>
-                <span>BUYBIS</span>
-            </div>
+
+    <nav class="navbar  navbar-dark navbar-expand bg-primary navigation-clean">
+        <div class="container"><a class="navbar-brand" href="#">BUYBIS</a><button class="navbar-toggler" data-toggle="collapse"></button>
+            <span id="navcol-1"><div class="collapse navbar-collapse" id="navcol-1">
+             
          
-        </nav>
-    </header>
-    <section class="ss">
-    <div  id="carouselExampleIndicators" class="carousel slide hhy" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-  </ol>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="d-block w-100 tyt" src="https://img.freepik.com/premium-vector/ethereum-cryptocurrency-digital-coin-presentation-computer-circuit-board-vector-blockchain_185386-777.jpg?w=2000" alt="First slide">
     </div>
-    <div class="carousel-item">
-      <img class="d-block w-100 tyt" src="https://img.freepik.com/premium-vector/ethereum-cryptocurrency-digital-coin-presentation-computer-circuit-board-vector-blockchain_185386-777.jpg?w=2000" alt="Second slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100 tyt" src="https://img.freepik.com/premium-vector/ethereum-cryptocurrency-digital-coin-presentation-computer-circuit-board-vector-blockchain_185386-777.jpg?w=2000" alt="Third slide">
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
-    </section>
-    <hr>
-    <section class="coinlist">
-    <coingecko-coin-list-widget 
-     coin-ids="bitcoin,eos,ethereum,litecoin,ripple,usd,usdtez,tether,dogecoin"
-      currency="usd" locale="en" width="100%">
+    </nav>
 
-    </coingecko-coin-list-widget>
-</section>
+    <!-- moilenav -->
+    <nav class="mynav">
+        <span><a class="nav-links" href="index.html"><i class="material-icons">HOME</i></a></span>
+       <span><a class="nav-links" href="exchange.html"><i class="material-icons">TRADE</i></a></span>
+       <span><a class="nav-links" href="dashboard.html"><i class="material-icons">WALLET</i></a></span>
+    </nav>
+    <!-- ends here -->
+    <div class="card">
+        <div class="card-header">
+            <ul class="nav nav-tabs card-header-tabs">
+                <li class="nav-item"><a class="nav-link active" href="#">MY ASSETS</a></li>
+            </ul>
+        </div>
+        <div class="card-body " style="height: auto;width: 100%;">
+            <h4 class="card-title" style="font-size: 18PX;color: rgb(105,108,112);font-family: Aldrich, sans-serif;">WALLET OVERVIEW</h4>
+            <h4 class="card-title" style="line-height: 41px;letter-spacing: 2px;filter: blur(0px) brightness(14%) contrast(59%) grayscale(12%) hue-rotate(41deg);">$ 0.0000345&nbsp;</h4>
+            <h4 class="card-title" style="font-size: 12PX;color: rgb(105,108,112);font-family: Aldrich, sans-serif;">REFERRAL COMMISSION</h4>
+            <h4 class="card-title" style=" font-size: 15PX;line-height: 21px;letter-spacing: 2px;filter: blur(0px) brightness(14%) contrast(59%) grayscale(12%) hue-rotate(41deg);">$ 0.0000345&nbsp;</h4>
+            
+                
+          <div class="card-title"><button class="btn bbt " type="button">Deposit</button><button class="btn bbt " type="button">Withdraw</button></div>
+               
+        
+        </div>
+    </div>
+ <!-- DataTales Example -->
+
+    
+    <div class="card">
+        <div class="table-responsive">
+            <table class="table " id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>TOKEN</th>
+                        <th>AMOUNT</th>
+                        
+                    </tr>
+                </thead>
+          
+                <tbody>
+                    <tr>
+                        <td>USDT</td>
+                        <td>$3070.00</td>
+                        
+                    </tr>
+                    <tr>
+                        <td>BUSD</td>
+                        <td>$3400.00</td>
+                        
+                    </tr>
+                    <tr>
+                        <td>USDC</td>
+                        <td>$3090.00</td>
+                        
+                    </tr>
+                    <tr>
+                        <td>BTC</td>
+                        <td>$300.00</td>
+                        
+                    </tr>
+                     <tr>
+                        <td>ETH</td>
+                        <td>$200.00</td>
+                 
+                    </tr>
+                    <tr>
+                        <td>SOLANA</td>
+                        <td>$200.00</td>
+                 
+                    </tr>
+                    <tr>
+                        <td>BUSD</td>
+                        <td>$3400.00</td>
+                        
+                    </tr>
+                    <tr>
+                        <td>USDC</td>
+                        <td>$3090.00</td>
+                        
+                    </tr>
+                    <tr>
+                        <td>BTC</td>
+                        <td>$300.00</td>
+                        
+                    </tr>
+                     <tr>
+                        <td>ETH</td>
+                        <td>$200.00</td>
+                 
+                    </tr>
+                    <tr>
+                        <td>SOLANA</td>
+                        <td>$200.00</td>
+                 
+                    </tr>
+                    <tr>
+                        <td>BUSD</td>
+                        <td>$3400.00</td>
+                        
+                    </tr>
+                    <tr>
+                        <td>USDC</td>
+                        <td>$3090.00</td>
+                        
+                    </tr>
+                    <tr>
+                        <td>BTC</td>
+                        <td>$300.00</td>
+                        
+                    </tr>
+                     <tr>
+                        <td>ETH</td>
+                        <td>$200.00</td>
+                 
+                    </tr>
+                    <tr>
+                        <td>SOLANA</td>
+                        <td>$200.00</td>
+                 
+                    </tr>
+                    <tr>
+                        <td>BUSD</td>
+                        <td>$3400.00</td>
+                        
+                    </tr>
+                    <tr>
+                        <td>USDC</td>
+                        <td>$3090.00</td>
+                        
+                    </tr>
+                    <tr>
+                        <td>BTC</td>
+                        <td>$300.00</td>
+                        
+                    </tr>
+                     <tr>
+                        <td>ETH</td>
+                        <td>$200.00</td>
+                 
+                    </tr>
+                    <tr>
+                        <td>SOLANA</td>
+                        <td>$200.00</td>
+                 
+                    </tr>
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+<!-- 
+    
+    <div class="form-group row pad">
+        <label class="col-sm-2 col-form-label">Referral Link</label>
+        <div class="col-sm-8">
+                <input type="text" class="form-control" id="myInput" value="link" readonly>
+            </div>
+         <button class="btn btn-secondary bg-gradient-primary btn-sm mar" onclick="myFunction()" onmouseout="outFunc()" >Copy Link</button>    
+         
+      </div>
+  
+  <br>
+  <h5 class="pad"><center><code>
+  15 % affiliate commision on every deposit made from your referral.
+  </code></center></h5> -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
+    <script src="assets/js/Simple-Slider.js"></script>
 </body>
-</html>
 
-<script src="https://widgets.coingecko.com/coingecko-coin-list-widget.js"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</html>
