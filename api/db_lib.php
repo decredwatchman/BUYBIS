@@ -24,11 +24,18 @@ function signup(string $username, string $password, string $email)
             $exists_e = run_query("SELECT `id` FROM `users` WHERE `username`='$username' or `email`='$email'");
             
             if(!$exists_n && !$exists_e){
-            $result = run_query("INSERT INTO `users` (`username`, `password`, `email`) VALUES ('$username','$password','$email')"
-            );
+                $result = run_query("INSERT INTO `users` (`username`, `password`, `email`, `admin`, `banned`, `session`) VALUES ('$username','$password','$email','0','0','null')");
+            if($result){
+                popup("Successfully Registered");
+                return True;
+            }else{
+                popup("Not registered");
+                return false;
+            }
+            
             //echo("{result : 'User Added'}");
-            popup("Successfully Registered");
-            return True;
+            
+            
 
             }else if ($exists_e){
              popup("user email Already Registered");
@@ -54,7 +61,6 @@ function signup(string $username, string $password, string $email)
 
 function signin(string $username, string $password){
     //password_verify()
-    echo $_SESSION["_u_"]."<br>";
     global $conn, $allowed_methods;
     $username= $conn->escape_string($username);
     $pass = run_query("SELECT `password` FROM `users` WHERE `username`='$username' or `email`='$username' LIMIT 1");
@@ -104,8 +110,10 @@ function logout(){
 *@param userdata
 */
 function get_userdata(bool $custom=false,string $field=null){
-    $usr = $_SESSION['_u_'];
+    global $conn;
+    $usr = get_userid();
     $res = null;
+    $field = $conn->escape_string($field);
     if(isLoggedin()){
     if($custom){
         return 0;
@@ -120,16 +128,70 @@ function get_userdata(bool $custom=false,string $field=null){
     }}
 }
 
-function add_userdata(){
-    
-}
+function add_userdata(string $property,string $value){
+    global $conn;
+    $_id = $conn->escape_string(get_userid());
+    $property = $conn->escape_string($property);
+    $value = $conn->escape_string($value);
+    //DESCRIBE `my_table`
+    //CREATE TABLE `app_db`.`usr` ( `property` VARCHAR(50) NOT NULL , `value` VARCHAR(1024) NOT NULL , `id` INT NOT NULL AUTO_INCREMENT , UNIQUE (`id`), UNIQUE (`property`)) ENGINE = InnoDB;
+    if(run_query("SELECT * FROM app_db.`usr_$_id` WHERE 1 LIMIT 1")){
+        echo"wello";
+        $res = run_query("INSERT INTO `app_db`.`usr_$_id` (`property`, `value`) VALUES ('$property','$value')");
+        if(!$res){
+            popup("ERROR, Data Reg Failed");
+        }else{
+            return true;
+        }
+    }else{
+        //table has not been created
+        $res = run_query("CREATE TABLE `app_db`.`usr_$_id` ( `property` VARCHAR(50) NOT NULL , `value` VARCHAR(1024) NOT NULL , `id` INT NOT NULL AUTO_INCREMENT , UNIQUE (`id`), UNIQUE (`property`),`date` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP) ENGINE = InnoDB;");
+        if($res){
+            $res = run_query("INSERT INTO `app_db`.`usr_$_id` (`property`, `value`) VALUES ('init','_init_')");
+            $res = run_query("INSERT INTO `app_db`.`usr_$_id` (`property`, `value`) VALUES ('$property','$value')");
+            if(!$res){
+                popup("ERROR, Data Reg Failed");
+            }else{
+                return true;
+            }
+        }else{
+            popup("ERROR, Data Reg Failed");
+        }
+        //run_query("DROP TABLE `usr11",true);
+        //add_userdata($property,$value);
+        print("kk<br>");
+    }
+
+}   
 
 function update_userdata(string $field ,$value , bool $notify=false){
+    global $conn;
+    $field = $conn->escape_string($field);
+    $value = $conn->escape_string($value);
+
     $restricted = ['id','admin',];
     if(in_array($field,$restricted)){
-
+        popup("NOT ALLOWED!");
     }else{
-        $res = run_query("UPDATE `users` SET `id`='$'");
+        $res = run_query("UPDATE `users` SET `$field`='$value' where `id`='".get_userid()."'");
+        if($res){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    return false;
+}
+function update_userdata_custom(string $field ,$value , bool $notify=false){
+    global $conn;
+    $field = $conn->escape_string($field);
+    $value = $conn->escape_string($value);
+
+    $restricted = ['id','admin',];
+    if(in_array($field,$restricted)){
+        popup("NOT ALLOWED!");
+    }else{
+        $res = run_query("UPDATE `app_db`.`usr_".get_userid()."` SET `$field`='$value' where `id`='".get_userid()."'");
         if($res){
             return true;
         }else{
@@ -139,5 +201,13 @@ function update_userdata(string $field ,$value , bool $notify=false){
     return false;
 }
 
+
+function create_server_session(){
+    
+}
+
+function get_userid(){
+    return $_SESSION["_u_"];
+}
 
 ?>
