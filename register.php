@@ -19,7 +19,9 @@ if(isLoggedin()){
         $username = $_POST['username'];
         $password = $_POST['password'];
         $email = $_POST['email'];
-        signup($username,$password,$email);
+       if(signup($username,$password,$email)) {
+        header("Location:login");
+       }
     }
     ?>
         <form action="" method="POST">
