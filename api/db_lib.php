@@ -103,13 +103,13 @@ function signin(string $username, string $password){
 *@return bool
 */
 function isLoggedin(){
-    if( $_SESSION["loggedin"] && $_SESSION["last_loggedin"]< 1800*8){
+    if (isset( $_SESSION["loggedin"]) && $_SESSION["last_loggedin"]< 1800*8){
         //last login 4hrs 
         //logout
         logout();
         return false;
     }else{
-        return $_SESSION["loggedin"];
+        return isset($_SESSION["loggedin"]);
     }
 
 }
