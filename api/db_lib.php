@@ -109,7 +109,7 @@ function isLoggedin(){
         logout();
         return false;
     }else{
-        return true;
+        return $_SESSION["loggedin"];
     }
 
 }
@@ -117,6 +117,8 @@ function isLoggedin(){
 * Logs out current user
 */
 function logout(){
+    $_SESSION["loggedin"] = false;
+    $_SESSION["_u_"] = null;
     session_unset();
     session_destroy();
 }
