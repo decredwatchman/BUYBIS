@@ -74,9 +74,14 @@ function signin(string $username, string $password){
     global $conn, $allowed_methods;
     $username= $conn->escape_string($username);
     $pass = run_query("SELECT `password` FROM `users` WHERE `username`='$username' or `email`='$username' LIMIT 1");
-    $usr = run_query("SELECT `id` FROM `users` WHERE `username`='$username' or `email`='$username' LIMIT 1")[0]['id'];
-
-    $correct = password_verify($password,$pass[0]["password"]);///$pass[0]==hash( "sha256",$password);
+    if($pass){
+        $pass = $pass[0]['password'];
+    }
+    $usr = run_query("SELECT `id` FROM `users` WHERE `username`='$username' or `email`='$username' LIMIT 1");
+    if($usr){
+        $usr = $usr[0]['id'];
+    }
+    $correct = password_verify($password,$pass);///$pass[0]==hash( "sha256",$password);
     if($pass && $correct){
         popup("Loggedin");
         $_SESSION["loggedin"] = true;
