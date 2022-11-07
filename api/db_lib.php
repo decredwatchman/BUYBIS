@@ -30,16 +30,16 @@ function signup(string $username, string $password, string $email)
             $email = $conn->escape_string($email);
             $exists_n = run_query("SELECT `id` FROM `users` WHERE `username`='$username' or `email`='$email'");
             $exists_e = run_query("SELECT `id` FROM `users` WHERE `username`='$username' or `email`='$email'");
-            
+            $session = uniqid("tkn_");
             if(!$exists_n && !$exists_e){
-                $result = run_query("INSERT INTO `users` (`username`, `password`, `email`, `admin`, `banned`, `session`) VALUES ('$username','$password','$email','0','0','null')");
+                $result = run_query("INSERT INTO `users` (`username`, `password`, `email`, `admin`, `banned`, `session`) VALUES ('$username','$password','$email','0','0','$session')");
             if($result){
                 popup("Successfully Registered");
                 return True;
             }else{
                 popup("Not registered");
-
-                
+                print("INSERT INTO `users` (`username`, `password`, `email`, `admin`, `banned`, `session`) VALUES ('$username','$password','$email','0','0','$session')");
+                exit;
                 return false;
             }
             
