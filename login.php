@@ -1,4 +1,8 @@
-<?php   include("api/db_lib.php"); ?>
+<?php include("api/db_lib.php");
+if(isLoggedin()){
+ header("Location:user/index");
+    }
+     ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,11 +15,12 @@
 <body>
 <section>
 <?php
+
     if(isset($_POST['login'])){
         $username =$_POST['username'];
         $password =$_POST['password'];
         if(signin($username,$password)){
-          header(Location:"user/index");
+          header("Location:user/index");
         }
         
     }

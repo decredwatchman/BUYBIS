@@ -1,3 +1,15 @@
+<?php include("../api/db_lib.php");
+if(isset($_GET['logout'])){
+    logout();
+    header("Location:./index");
+    
+     }
+
+
+// if(isLoggedin()){
+//  header("Location:user/index");
+//     }
+     ?>
 <!DOCTYPE html>
 <html>
 
@@ -96,11 +108,11 @@
                     <span class="logoo">Buybis</span>
               </div>
               <div class="con1">
-                    <div class="list  yellow"><a href="#" class="items yellow">Deposit</a></div>
-                    <div class="list"><a href="#" class="items">Withdraw</a></div>
-                    <div class="list"><a href="#" class="items">Send</a></div>
-                    <div class="list"><a href="#" class="items">Transfer</a></div>
-                    <div class="list"><a href="#" class="items">Transaction History</a></div>
+                <!-- <div class="list  yellow"><a href="#" class="items yellow">Deposit</a></div> -->
+                <div class="list"><a href="index" class="items">HOME</a></div>
+                <div class="list"><a href="exchange" class="items">TRADE</a></div>
+                <div class="list"><a href="dashboard" class="items">WALLET</a></div>
+                <div class="list"><a href="?logout=1" class="items">LOG OUT</a></div>
                     <div class="menu">
                       <div class="menu-item"></div>
                       <div class="menu-item"></div>

@@ -1,3 +1,8 @@
+<?php include("api/db_lib.php");
+if(isLoggedin()){
+ header("Location:user/index");
+    }
+     ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +15,6 @@
 <body>
 <section>
     <?php
-    include("api/db_lib.php");
     if(isset($_POST['register'])){
         $username = $_POST['username'];
         $password = $_POST['password'];
