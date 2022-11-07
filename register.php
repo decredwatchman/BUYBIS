@@ -12,9 +12,9 @@
     <?php
     include("api/db_lib.php");
     if(isset($_POST['register'])){
-        $username = mysqli_real_escape_string($conn,$_POST['username']);
-        $password = mysqli_real_escape_string($conn,$_POST['password']);
-        $email = mysqli_real_escape_string($conn,$_POST['email']);
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        $email = $_POST['email'];
         signup($username,$password,$email);
     }
     ?>

@@ -38,6 +38,8 @@ function signup(string $username, string $password, string $email)
                 return True;
             }else{
                 popup("Not registered");
+
+                
                 return false;
             }
             
