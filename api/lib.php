@@ -62,6 +62,9 @@ function run_query(string $query){
         $result = $conn->query($query);
 
         if (str_starts_with($query,"SELECT") ) {
+            if(!$result){
+                return 0;
+            }
             if($result->num_rows == 0){
                 return 0;
             }

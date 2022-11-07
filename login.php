@@ -17,7 +17,7 @@
         if(signin($username,$password)){
             //TODO redirect to dashboard
         }
-        var_dump(get_userdata("username"));
+        
     }
     ?>
         <form action="" method="POST">

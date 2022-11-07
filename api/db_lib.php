@@ -124,29 +124,40 @@ function logout(){
 * gets userdata
 *@param userdata
 */
-function get_userdata(bool $custom=false,string $field=null){
+function get_core_userdata(string $field=null){
     global $conn;
     $usr = get_userid();
     $res = null;
     $field = $conn->escape_string($field);
     if(isLoggedin()){
-    if($custom){
-        if($field){
-
-        }
-        return 0;
-    }else{
         if($field){
             $res = run_query("SELECT `$field` from `users` WHERE id='$usr'")[0];
         }else{
             $res = run_query("SELECT `username`,`email`,`admin`,`banned` from `users` WHERE id='$usr'")[0];
-
         }
         return $res;
-    }}
+    }
+}
+/**
+ * get custom data
+*/
+function get_custom_userdata(string $field="init"){
+    global $conn;
+    $usr = get_userid();
+    $res = null;
+    $field = $conn->escape_string($field);
+    if(isLoggedin()){
+        $res = run_query("SELECT * from `app_db`.`usr_$usr` WHERE `property` = '$field'");
+        if(!$res){
+            return false;
+        }
+        return $res;
+    }
+    return false;
 }
 
-function add_userdata(string $property,string $value){
+
+function add_custom_userdata(string $property,string $value){
     global $conn;
     $_id = $conn->escape_string(get_userid());
     $property = $conn->escape_string($property);
@@ -177,11 +188,13 @@ function add_userdata(string $property,string $value){
         }
         //run_query("DROP TABLE `usr11",true);
         //add_userdata($property,$value);
-        print("kk<br>");
     }
 
 }   
-
+/**
+ * Updates Core userdata
+ * id/admin not allowed
+ */
 function update_core_userdata(string $field ,$value , bool $notify=false){
     global $conn;
     $field = $conn->escape_string($field);
@@ -204,7 +217,7 @@ function update_core_userdata(string $field ,$value , bool $notify=false){
  * Updates custom userdata
  * 
  */
-function update_custom_userdata(string $field ,$value , bool $notify=false, bool $create=false){
+function update_custom_userdata(string $field ,$value , bool $create=false){
     global $conn;
     $field = $conn->escape_string($field);
     $value = $conn->escape_string($value);
@@ -217,8 +230,12 @@ function update_custom_userdata(string $field ,$value , bool $notify=false, bool
         if($res){
             return true;
         }else{
-            popup("Error! Field not created");
-            return false;
+            if(!$create){
+                popup("Error!");
+                return false;
+            }
+            
+            return add_custom_userdata($field,$value);
         }
     }
     return false;
