@@ -10,6 +10,14 @@ $allowed_methods = ["POST","GET"];
 //header('Content-Type: application/json; charset=utf-8');
 
 
+// SOMETHING LIKE THIS
+
+// echo $mymessage = '<div class="alert alert-primary alert-dismissible" role="alert">
+// <button type="button" class="close" data-dismiss="alert" aria-label="close">
+// <span aria-hidden="true">&times;</span></button>
+// ALERT : WRONG USER DETAILS
+// </div>';
+
 
 function signup(string $username, string $password, string $email)
 {
@@ -18,7 +26,7 @@ function signup(string $username, string $password, string $email)
         if( isset($username,$password,$email) ){
             $username= $conn->escape_string($username);
             $password= password_hash($password,PASSWORD_DEFAULT);
-            var_dump($password);
+           // var_dump($password);
             $email = $conn->escape_string($email);
             $exists_n = run_query("SELECT `id` FROM `users` WHERE `username`='$username' or `email`='$email'");
             $exists_e = run_query("SELECT `id` FROM `users` WHERE `username`='$username' or `email`='$email'");

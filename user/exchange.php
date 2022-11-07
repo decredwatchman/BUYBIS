@@ -112,9 +112,9 @@
 
     <!-- moilenav -->
     <nav class="mynav">
-        <span><a class="nav-links" href="index.html"><img height="30px" style="display: block; ;" src="assets/svg/home.svg"></i></a></span>
-       <span><a class="nav-links" href="exchange.html"><img height="30px" style="display: block; ;" src="assets/svg/change.svg"></i></a></span>
-       <span><a class="nav-links" href="dashboard.html"><img height="30px" style="display: block; ;" src="assets/svg/wallet.svg"></i></a></span>
+        <span><a class="nav-links" href="index"><img height="30px" style="display: block; ;" src="assets/svg/home.svg"></i></a></span>
+       <span><a class="nav-links" href="exchange"><img height="30px" style="display: block; ;" src="assets/svg/change.svg"></i></a></span>
+       <span><a class="nav-links" href="dashboard"><img height="30px" style="display: block; ;" src="assets/svg/wallet.svg"></i></a></span>
     </nav>
     <!-- ends here -->
 <section>

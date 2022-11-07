@@ -4,9 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Home - Brand</title>
+    <title>BUYBIS</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aladin">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aldrich">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya">
@@ -17,115 +17,75 @@
     <link rel="stylesheet" href="assets/css/Footer-Basic.css">
     <link rel="stylesheet" href="assets/css/Footer-Clean.css">
     <link rel="stylesheet" href="assets/css/Highlight-Clean.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"> -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
-    <link rel="stylesheet" href="assets/css/Simple-Slider.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
+    <link rel="stylesheet" href="assets/css/Simple-Slider.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <style>
-    .nav-bar {
-      padding: 10px;
-      background-color: #007bff;
-      color: white;
-      
-  }
-  
-  .nav-section {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 5px;
-  }
-  
-  .logoo {
-      font-size: 25px;
-      font-weight: 600;
-  }
-  
-  .con1 {
-      display: flex;
-  }
-  
-  .list {
-      padding: 8px 15px;
-      margin: 0px 10px;
-      border-radius: 3px;
-      background-color: white;
-  }
-  
-  .items {
-      text-decoration: none;
-      font-size: 14px;
-    font-weight:bold;
-      text-decoration: none;
-      font-weight: 500;
-  }
-  .menu-item{
-    width: 25px;
-    background-color: white;
-    height: 3px;
-    margin-top: 4px;
-    margin-bottom: 4px;
-  }
-  .menu{
-    display: none;
-  }
-  
-  .section1 {
-      padding: 20px;
-
-  }
-  
-@media screen and (max-width:800px){
-  .list{
-    display: none;
-  }
-  .menu{
-    display: block;
-  }
- 
+<style>
+  .nav-bar {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    
 }
-  
-  </style>
-  <div class="nav-bar">
-    <div class="nav-section">
-          <div class="con1">
-                <span class="logoo">Buybis</span>
-          </div>
-          <div class="con1">
-                <div class="list  yellow"><a href="#" class="items yellow">Deposit</a></div>
-                <div class="list"><a href="#" class="items">Withdraw</a></div>
-                <div class="list"><a href="#" class="items">Send</a></div>
-                <div class="list"><a href="#" class="items">Transfer</a></div>
-                <div class="list"><a href="#" class="items">Transaction History</a></div>
-                <div class="menu">
-                  <div class="menu-item"></div>
-                  <div class="menu-item"></div>
-                  <div class="menu-item"></div>
-                </div>
-          </div>
-    </div>
-</div>
 
-<!-- moilenav -->
-<nav class="mynav">
-    <span><a class="nav-links" href="index.html"><img height="30px" style="display: block; ;" src="assets/svg/home.svg"></i></a></span>
-   <span><a class="nav-links" href="exchange.html"><img height="30px" style="display: block; ;" src="assets/svg/change.svg"></i></a></span>
-   <span><a class="nav-links" href="dashboard.html"><img height="30px" style="display: block; ;" src="assets/svg/wallet.svg"></i></a></span>
-</nav>
-<!-- ends here -->
-    <!-- ends here -->
-    <!-- <div class="simple-slider">
-        <div class="swiper-container">
-            <div class="swiper-wrapper"><div class="swiper-slide" style="background-image:url(assets/img/S2.JPG);"></div><div class="swiper-slide" style="background-image:url('assets/img/TRAD.jpeg');"></div><div class="swiper-slide" style="background-image:url('assets/img/security.jpg');"></div></div>
-            <div class="swiper-pagination"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-        </div>
-    </div> -->
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+.nav-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+
+.logoo {
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.con1 {
+    display: flex;
+}
+
+.list {
+    padding: 8px 15px;
+    margin: 0px 10px;
+    border-radius: 3px;
+    background-color: white;
+}
+
+.items {
+    text-decoration: none;
+    font-size: 14px;
+  font-weight:bold;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+
+.section1 {
+    padding: 20px;
+}
+
+</style>
+<div class="nav-bar">
+                  <div class="nav-section">
+                        <div class="con1">
+                              <span class="logoo">Buybis</span>
+                        </div>
+                        <div class="con1">
+                              <!-- <div class="list  yellow"><a href="#" class="items yellow">Deposit</a></div>
+                              <div class="list"><a href="#" class="items">Withdraw</a></div>
+                              <div class="list"><a href="#" class="items">Send</a></div>
+                              <div class="list"><a href="#" class="items">Transfer</a></div> -->
+                              <div class="list"><a href="register" class="items">Register/login</a></div>
+                        </div>
+                  </div>
+            </div>
+            
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
           <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -155,7 +115,7 @@
     <div class="highlight-clean" style="padding-top: 30px;padding-bottom: 20px;">
         <div class="container">
             <div class="intro">
-                <h2 class="text-center">TRENDING</h2>
+                <h4 class="text-center">TRENDING</h4>
             </div>
             <div class="buttons"></div>
         </div>
