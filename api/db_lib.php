@@ -131,10 +131,13 @@ function get_userdata(bool $custom=false,string $field=null){
     $field = $conn->escape_string($field);
     if(isLoggedin()){
     if($custom){
+        if($field){
+
+        }
         return 0;
     }else{
         if($field){
-            $res = run_query("SELECT `$field` from `users` WHERE id='$usr'")[0][$field];
+            $res = run_query("SELECT `$field` from `users` WHERE id='$usr'")[0];
         }else{
             $res = run_query("SELECT `username`,`email`,`admin`,`banned` from `users` WHERE id='$usr'")[0];
 
@@ -179,7 +182,7 @@ function add_userdata(string $property,string $value){
 
 }   
 
-function update_userdata(string $field ,$value , bool $notify=false){
+function update_core_userdata(string $field ,$value , bool $notify=false){
     global $conn;
     $field = $conn->escape_string($field);
     $value = $conn->escape_string($value);
@@ -197,7 +200,11 @@ function update_userdata(string $field ,$value , bool $notify=false){
     }
     return false;
 }
-function update_userdata_custom(string $field ,$value , bool $notify=false){
+/**
+ * Updates custom userdata
+ * 
+ */
+function update_custom_userdata(string $field ,$value , bool $notify=false, bool $create=false){
     global $conn;
     $field = $conn->escape_string($field);
     $value = $conn->escape_string($value);
@@ -210,6 +217,7 @@ function update_userdata_custom(string $field ,$value , bool $notify=false){
         if($res){
             return true;
         }else{
+            popup("Error! Field not created");
             return false;
         }
     }

@@ -12,11 +12,12 @@
 <section>
 <?php
     if(isset($_POST['login'])){
-        $username = mysqli_real_escape_string($conn,$_POST['username']);
-        $password = mysqli_real_escape_string($conn,$_POST['password']);
+        $username =$_POST['username'];
+        $password =$_POST['password'];
         if(signin($username,$password)){
             //TODO redirect to dashboard
         }
+        var_dump(get_userdata("username"));
     }
     ?>
         <form action="" method="POST">
