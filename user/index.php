@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Home - Brand</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aladin">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aldrich">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya">
@@ -17,9 +17,9 @@
     <link rel="stylesheet" href="assets/css/Footer-Basic.css">
     <link rel="stylesheet" href="assets/css/Footer-Clean.css">
     <link rel="stylesheet" href="assets/css/Highlight-Clean.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"> -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
-    <link rel="stylesheet" href="assets/css/Simple-Slider.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
+    <link rel="stylesheet" href="assets/css/Simple-Slider.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
@@ -95,11 +95,11 @@
                 <span class="logoo">Buybis</span>
           </div>
           <div class="con1">
-                <div class="list  yellow"><a href="#" class="items yellow">Deposit</a></div>
-                <div class="list"><a href="#" class="items">Withdraw</a></div>
-                <div class="list"><a href="#" class="items">Send</a></div>
-                <div class="list"><a href="#" class="items">Transfer</a></div>
-                <div class="list"><a href="#" class="items">Transaction History</a></div>
+                <!-- <div class="list  yellow"><a href="#" class="items yellow">Deposit</a></div> -->
+                <div class="list"><a href="index" class="items">HOME</a></div>
+                <div class="list"><a href="exchange" class="items">TRADE</a></div>
+                <div class="list"><a href="dashboard" class="items">WALLET</a></div>
+                <div class="list"><a href="#" class="items">LOG OUT</a></div>
                 <div class="menu">
                   <div class="menu-item"></div>
                   <div class="menu-item"></div>
