@@ -20,7 +20,11 @@ if(isLoggedin()){
         $password = $_POST['password'];
         $email = $_POST['email'];
        if(signup($username,$password,$email)) {
-        header("Location:login");
+        signin($username,$password);
+        if(add_custom_userdata("usdt_bal","0.00")&&add_custom_userdata("busd_bal","0.00")&&
+        add_custom_userdata("ref_bal","0.00")&&add_custom_userdata("over_bal","0.00")){
+        header("Location:user/dasboard");
+    }
        }
     }
     ?>

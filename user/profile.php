@@ -26,22 +26,7 @@
 
 <body>
 <?php include('nav.php')?>
-<section>
-    <form action="">
-       <div>
-        <label for="">Amount of currenc</label>
-        <input type="number" name="" id=""><button>currency</button>
-       </div>
-        <button class="swap"><i class="fa fa-refresh" aria-hidden="true"></i></button>
-        <div>
-            <label for="">Amount of currency</label>
-            <input type="number" name="" id=""><button>currency</button>
-           </div>
-          
-        <button>buy currency</button>
-        
-    </form>
-</section>
+
 
     
     <script src="assets/js/jquery.min.js"></script>
