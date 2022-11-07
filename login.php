@@ -15,11 +15,12 @@
         $username =$_POST['username'];
         $password =$_POST['password'];
         if(signin($username,$password)){
-            //TODO redirect to dashboard
+          header(Location:"user/index");
         }
         
     }
     ?>
+
         <form action="" method="POST">
             <h1 id="head">LOG IN</h1>
             <p>Welcome back!</p>
