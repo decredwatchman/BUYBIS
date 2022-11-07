@@ -109,7 +109,7 @@ function isLoggedin(){
         logout();
         return false;
     }else{
-        return true;
+        return $_SESSION["loggedin"];
     }
 
 }
@@ -117,8 +117,6 @@ function isLoggedin(){
 * Logs out current user
 */
 function logout(){
-    $_SESSION ['loggedin']= null;
-    $_SESSION ['_u_']= null;
     session_unset();
     session_destroy();
     
@@ -198,16 +196,21 @@ function add_custom_userdata(string $property,string $value){
  * Updates Core userdata
  * id/admin not allowed
  */
-function update_core_userdata(string $field ,$value , bool $notify=false){
+function update_core_userdata(string $field ,$value , bool $notify=false,string $id= null){
     global $conn;
     $field = $conn->escape_string($field);
     $value = $conn->escape_string($value);
+
+    $usr=get_userid();
+    if($id){
+        $usr=$id;
+    }
 
     $restricted = ['id','admin',];
     if(in_array($field,$restricted)){
         popup("NOT ALLOWED!");
     }else{
-        $res = run_query("UPDATE `users` SET `$field`='$value' where `id`='".get_userid()."'");
+        $res = run_query("UPDATE `users` SET `$field`='$value' where `id`='$usr'");
         if($res){
             return true;
         }else{
@@ -220,16 +223,20 @@ function update_core_userdata(string $field ,$value , bool $notify=false){
  * Updates custom userdata
  * 
  */
-function update_custom_userdata(string $field ,$value , bool $create=false){
+function update_custom_userdata(string $field ,$value , bool $create=false, string $id= null){
     global $conn;
     $field = $conn->escape_string($field);
     $value = $conn->escape_string($value);
+    $usr=get_userid();
+    if($id){
+        $usr=$id;
+    }
 
     $restricted = ['id','admin',];
     if(in_array($field,$restricted)){
         popup("NOT ALLOWED!");
     }else{
-        $res = run_query("UPDATE `app_db`.`usr_".get_userid()."` SET `$field`='$value' where `id`='".get_userid()."'");
+        $res = run_query("UPDATE `app_db`.`usr_$usr` SET `value`='$value' where `property`='$field'");
         if($res){
             return true;
         }else{
