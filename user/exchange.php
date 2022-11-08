@@ -32,6 +32,8 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
+
+
 section{
   display: flex;
   align-items: center;
@@ -139,26 +141,30 @@ form button:hover{
       <header>SWAP</header>
       <form action="#">
         <div class="amount">
-          <p>Enter Amount</p>
+        <p>Amount of :</p>
           <input type="number" value="1">
-        </div>
-        <div class="drop-list">
           <div class="from">
-            <p>From</p>
             <div class="select-box">
               <img src="./assets/svg/busd.svg" alt="flag">
               <select> <!-- Options tag are inserted from JavaScript --> </select>
             </div>
           </div>
-          <div class="icon"><i class="fas fa-exchange-alt"></i></div>
+        </div>
+       
+          <div class="icon"><img src="assets/svg/trade.svg" alt=""></div>
+       
+       
+          <div class="amount">
+        <p>Amount of :</p>
+          <input type="number" value="1">
           <div class="to">
-            <p>To</p>
             <div class="select-box">
               <img src="./assets/svg/tether-441954.svg" alt="flag">
               <select> <!-- Options tag are inserted from JavaScript --> </select>
             </div>
           </div>
         </div>
+
         <div class="exchange-rate">Getting exchange rate...</div>
         <button>TRADE</button>
       </form>
