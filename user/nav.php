@@ -96,7 +96,7 @@
                     <div class="list"><a href="index" class="items">HOME</a></div>
                 <div class="list"><a href="exchange" class="items">TRADE</a></div>
                 <div class="list"><a href="dashboard" class="items">WALLET</a></div>
-                <div class="list"><a href="dashboard" class="items">PROFILE</a></div>
+                <div class="list"><a href="profile" class="items">PROFILE</a></div>
                 <div class="list"><a href="#" class="items">LOG OUT</a></div>
                 <!-- <div class="list  yellow"><a href="#" class="items yellow">Deposit</a></div> -->
               
