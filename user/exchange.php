@@ -36,7 +36,7 @@ section{
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  min-height: 80vh;
   padding: 0 10px;
   background: ;
 }
@@ -56,9 +56,7 @@ section{
   font-weight: 500;
   text-align: center;
 }
-.wrapper form{
-  margin: 40px 0 20px 0;
-}
+
 form :where(input, select, button){
   width: 100%;
   outline: none;
@@ -142,7 +140,7 @@ form button:hover{
       <form action="#">
         <div class="amount">
           <p>Enter Amount</p>
-          <input type="text" value="1">
+          <input type="number" value="1">
         </div>
         <div class="drop-list">
           <div class="from">
@@ -162,7 +160,7 @@ form button:hover{
           </div>
         </div>
         <div class="exchange-rate">Getting exchange rate...</div>
-        <button>Get Exchange Rate</button>
+        <button>TRADE</button>
       </form>
     </div>
     </section>
