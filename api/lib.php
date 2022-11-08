@@ -18,7 +18,7 @@ if ($conn->connect_error) {
 }
 
 function run_query_xx(string $query,bool $conn2 = false){
-    try{
+
         if(!$conn2){
             global $conn;
             //$query = $conn->escape_string($query);
@@ -52,11 +52,7 @@ function run_query_xx(string $query,bool $conn2 = false){
                     return 0;
                 }
         }
-    }catch(Error){
-    return 0;
-    }
-    
-    
+  
 }
 
 function run_query(string $query){

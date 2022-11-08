@@ -169,7 +169,7 @@ function add_custom_userdata(string $property,string $value){
     $value = $conn->escape_string($value);
     //DESCRIBE `my_table`
     //CREATE TABLE `app_db`.`usr` ( `property` VARCHAR(50) NOT NULL , `value` VARCHAR(1024) NOT NULL , `id` INT NOT NULL AUTO_INCREMENT , UNIQUE (`id`), UNIQUE (`property`)) ENGINE = InnoDB;
-    if(run_query("SELECT * FROM app_db.`usr_$_id` WHERE 1 LIMIT 1")){
+    if(run_query("SHOW TABLES LIKE 'usr_$_id'")){
         echo"wello";
         $res = run_query("INSERT INTO `app_db`.`usr_$_id` (`property`, `value`) VALUES ('$property','$value')");
         if(!$res){
