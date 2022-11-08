@@ -270,6 +270,10 @@ function get_all_users(int $page = 1){
 
     return run_query("SELECT `id`,`username`,`email`,`admin`,`banned` FROM `users` LIMIT $perpage OFFSET $i");
 }
+function get_userdata_by_id(int $id){
 
+    return run_query("SELECT `id`,`username`,`email`,`admin`,`banned` FROM `users` WHERE id='$id' LIMIT 1");
+
+}
 
 ?>
