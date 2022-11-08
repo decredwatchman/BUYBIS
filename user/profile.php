@@ -42,7 +42,7 @@
                                         </div>
 
                                         </div>
-                                        <br>
+</div>
                                      
                                         <div class="card mb-4">
                         <div class="card-header py-3">
@@ -53,39 +53,42 @@
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
+                                            <th>Peer</th>
                                             <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
+                                            <th>Amount</th>
+                                            <th>date</th>
+                                            <th>Status</th>
                                         </tr>
                                     </thead>
                               
                                     <tbody>
                                         <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
+                                            <td>BUSD/USDT</td>
+                                            <td>trade</td>
                                             <td>61</td>
                                             <td>2011/04/25</td>
-                                            <td>$320,800</td>
+                                            <td>faild</td>
                                         </tr>
                                          <tr>
-                                            <td>Rhona Davidson</td>
-                                            <td>Integration Specialist</td>
-                                            <td>Tokyo</td>
+                                            <td>USDT/BUSD</td>
+                                            <td>Withdraw</td>
                                             <td>55</td>
                                             <td>2010/10/14</td>
-                                            <td>$327,900</td>
+                                            <td>success</td>
                                         </tr>
-
+                                        <tr>
+                                            <td>BUSD</td>
+                                            <td>deposit</td>
+                                            <td>55</td>
+                                            <td>2010/10/14</td>
+                                            <td>pending</td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
                         </div>
                     </div>
-</div>
+
 
                                      <!-- DataTales Example -->
                 
