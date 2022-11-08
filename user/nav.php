@@ -28,6 +28,13 @@
           border-radius: 3px;
           background-color: white;
       }
+      .log{
+        text-decoration: none;
+          font-size: 14px;
+        font-weight:bold;
+          text-decoration: none;
+          font-weight: 500;
+      }
       
       .items {
           text-decoration: none;
@@ -36,6 +43,14 @@
           text-decoration: none;
           font-weight: 500;
       }
+      .list:hover{
+        background-color:#F9F6EE;
+        color: rgb(30, 164, 213);
+      }
+      a:hover{
+        text-decoration:none;
+      }
+     
       .menu-item{
         width: 25px;
         background-color: white;
@@ -61,11 +76,16 @@
 
       }
       .tt{
-        padding: 8px 15px;
+        padding: 5px 8px;
           margin: 0px 10px;
           border-radius: 3px;
           background-color: white;
       }
+      .tt:hover{
+        background-color:#F9F6EE;
+        color: rgb(30, 164, 213);
+      }
+   
       .con2 {
           display: flex;
           flex-direction:column;
@@ -86,11 +106,11 @@
       <div class="nav-bar">
         <div class="nav-section">
               <div class="con1">
-                    <span class="logoo">Buybis</span>
+                    <span class="logoo" style="color:white; font-family:Arial Black;">Buybis</span>
               </div>
               <div class="con1">   
                 
-                 <div class="tt"><a href="#" class="items">LOG OUT</a></div>
+                 <div class="tt"><a href="#" class="ltems">LOG OUT</a></div>
                     
                 
                     <div class="list"><a href="index" class="items">HOME</a></div>
@@ -107,7 +127,7 @@
 
     <!-- moilenav -->
     <nav class="mynav">
-        <span><a class="nav-links" href="index"><img height="30px" style="display: block; ;" src="assets/svg/home.svg"></i></a></span>
+        <span><a class="nav-links" href="index"><img height="30px" style="display: block; color:white;" src="assets/svg/home.svg"></i></a></span>
        <span><a class="nav-links" href="exchange"><img height="30px" style="display: block; ;" src="assets/svg/change.svg"></i></a></span>
        <span><a class="nav-links" href="dashboard"><img height="30px" style="display: block; ;" src="assets/svg/wallet.svg"></i></a></span>
        <span><a class="nav-links" href="profile"><img height="30px" style="display: block; ;" src="assets/svg/user.svg"></i></a></span>
