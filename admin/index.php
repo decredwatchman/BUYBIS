@@ -110,7 +110,7 @@
                                         <tr>
                                             <td>Tiger Nixon</td>
                                             <td>$6888</td>
-                                            <td>deposite</td>
+                                            <td>withdraw</td>
                                             <td>61</td>
                                             <td>2011/04/25</td>
                                             <td>
@@ -121,7 +121,7 @@
                                         <tr>
                                             <td>Tiger Nixon</td>
                                             <td>$6888</td>
-                                            <td>deposite</td>
+                                            <td>deposit</td>
                                             <td>61</td>
                                             <td>2011/04/25</td>
                                             <td>
