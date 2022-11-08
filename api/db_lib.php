@@ -264,4 +264,12 @@ function get_userid(){
     return $_SESSION["_u_"];
 }
 
+function get_all_users(int $page = 1){
+    $perpage = 20;
+    $i = $page * $perpage;
+
+    return run_query("SELECT `id`,`username`,`email`,`admin`,`banned` FROM `users` LIMIT $perpage OFFSET $i");
+}
+
+
 ?>
