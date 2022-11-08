@@ -128,7 +128,7 @@
     <!-- moilenav -->
     <nav class="mynav">
         <span><a class="nav-links" href="index"><img height="30px" style="display: block; color:white;" src="assets/svg/home.svg"></i></a></span>
-       <span><a class="nav-links" href="exchange"><img height="30px" style="display: block; ;" src="assets/svg/change.svg"></i></a></span>
+       <span><a class="nav-links" href="exchange"><img height="30px" style="display: block; ;" src="assets/svg/swap.svg"></i></a></span>
        <span><a class="nav-links" href="dashboard"><img height="30px" style="display: block; ;" src="assets/svg/wallet.svg"></i></a></span>
        <span><a class="nav-links" href="profile"><img height="30px" style="display: block; ;" src="assets/svg/user.svg"></i></a></span>
     </nav>
