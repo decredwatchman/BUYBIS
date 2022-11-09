@@ -62,27 +62,54 @@
                                     </thead>
                               
                                     <tbody>
+                                        <?php
+                                        $id = get_userid();
+                                        $res = run_query("SELECT * FROM `app_db`.`transaction` WHERE `user`='$id'");
+                                        if($res){
+
+                                        
+                                        foreach($res as $i){
+                                        $t = 'unknown';
+                                        switch ($i['type']) {
+                                            case 0:
+                                                $t = "Deposit";
+                                                break;
+                                            case 1:
+                                                $t = "Withdraw";
+                                                # code...
+                                                break;
+                                            case 2:
+                                                $t = "Trade";
+                                                # code...
+                                                break;
+                                        }
+                                        $s = "Unknown";
+                                        switch ($i['approved']) {
+                                            case 0:
+                                                $s = "FAILED";
+                                                break;
+                                            case 1:
+                                                $s = "PENDING";
+                                                # code...
+                                                break;
+                                            case 2:
+                                                $s = "APPROVED";
+                                                # code...
+                                                break;
+                                        }
+                                        ?>
                                         <tr>
-                                            <td>BUSD/USDT</td>
-                                            <td>trade</td>
-                                            <td>61</td>
-                                            <td>2011/04/25</td>
-                                            <td>faild</td>
+                                            <td><?php echo $i['peer'] ?></td>
+                                            <td><?php echo $t ?></td>
+                                            <td><?php echo $i['amount'] ?></td>
+                                            <td><?php echo $i['date'] ?></td>
+                                            <td><?php echo $s ?></td>
                                         </tr>
-                                         <tr>
-                                            <td>USDT/BUSD</td>
-                                            <td>Withdraw</td>
-                                            <td>55</td>
-                                            <td>2010/10/14</td>
-                                            <td>success</td>
-                                        </tr>
-                                        <tr>
-                                            <td>BUSD</td>
-                                            <td>deposit</td>
-                                            <td>55</td>
-                                            <td>2010/10/14</td>
-                                            <td>pending</td>
-                                        </tr>
+                                         <?php
+                                        }}
+
+                                        
+                                        ?>
                                     </tbody>
                                 </table>
                             </div>
