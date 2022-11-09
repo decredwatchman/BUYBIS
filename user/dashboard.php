@@ -50,7 +50,7 @@ if(isset($_GET['logout'])){
             <h4 class="card-title" style=" font-size: 15PX;line-height: 21px;letter-spacing: 2px;filter: blur(0px) brightness(14%) contrast(59%) grayscale(12%) hue-rotate(41deg);">$ 0.0000345&nbsp;</h4>
             
                 
-          <div class="card-title"><button class="btn bbt " type="button">Deposit</button><button class="btn bbt " type="button">Withdraw</button></div>
+          <div class="card-title"><a class="btn bbt" href="deposit" type="color:white;" >Deposit</a><a class="btn bbt" href="withdraw" type="color:white;">Witdraw</a></div>
                
         
         </div>
