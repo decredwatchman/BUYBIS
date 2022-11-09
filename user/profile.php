@@ -25,7 +25,9 @@
 </head>
 
 <body>
-<?php include('nav.php')?>
+<?php include('nav.php');
+var_dump(get_core_userdata());
+?>
 
                                 <div class="col">
                                     <div class="card  mb-3">

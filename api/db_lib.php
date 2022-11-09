@@ -142,9 +142,6 @@ function get_core_userdata(string $field=null){
         }else{
             $res = run_query("SELECT `username`,`email`,`admin`,`banned` from `users` WHERE id='$usr'")[0];
         }
-        if($res){
-            $res = $res[0];
-        }
         return $res;
     }
 }
