@@ -1,7 +1,7 @@
 const dropList = document.querySelectorAll("form select"),
 fromCurrency = document.querySelector(".from select"),
 toCurrency = document.querySelector(".to select"),
-getButton = document.querySelector("form button");
+getButton = document.querySelector("form buttonmn");
 
 for (let i = 0; i < dropList.length; i++) {
     for(let currency_code in country_list){
@@ -52,7 +52,7 @@ function getExchangeRate(){
     let amountVal = amount.value;
     // if user don't enter any value or enter 0 then we'll put 1 value by default in the input field
     if(amountVal == "" || amountVal == "0"){
-        amount.value = "1";
+        amount.value = "";
         amountVal = 1;
     }
     exchangeRateTxt.innerText = "Getting exchange rate...";

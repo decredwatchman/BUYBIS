@@ -135,19 +135,56 @@ form button:hover{
   background: #4534fe;
 }
     </style>
-<?php include('nav.php')?>
+<?php include('nav.php');
+
+$servername = "localhost";
+$username = "root";
+$db="buybis";
+$password = "";
+// Create connection
+$conn = new mysqli($servername, $username, $password,$db );
+
+
+// Check connection
+if ($conn->connect_error) {
+  echo"Connection Wahala";
+    exit;
+
+}
+$insert = "SELECT * FROM `transaction` ";
+   $result = mysqli_query($conn,$insert); 
+   $row = $result->fetch_assoc();
+   $ff = $row['peer'];
+   echo $ff;
+if(isset($_POST['me'])){
+  $amount = $_POST['amount'];
+  $email = $_POST['email']; 
+  $peer = $_POST['peer']; 
+  $method = $_POST['method']; 
+  $dates = $_POST['dates']; 
+   $wallet = $_POST['wallet'];
+ echo $amount;
+ $insert = "INSERT INTO transaction (amount, method, email, wallet, peer, date) VALUES ('$amount','$method','$email','$wallet','$peer','$dates')";
+   $result = mysqli_query($conn,$insert); 
+
+ }    
+
+?>
 <section>
 <div class="wrapper">
       <header>Withdraw</header>
       <br><br>
-      <form action="#">
+      <form action="" method="post">
         <div class="amount">
         <p>Amount of :</p>
-          <input type="number" value="1">
+        <input type="number" name="amount" required>
+          <input type="hidden" value="withdraw" name="method">
+          <input type="hidden" value="email" name="email">
+          <input type="hidden" value="dates" name="dates">
           <div class="from">
             <div class="select-box">
               <img src="./assets/svg/busd.svg" alt="flag">
-              <select> <!-- Options tag are inserted from JavaScript --> </select>
+              <select name="peer"> <!-- Options tag are inserted from JavaScript --> </select>
             </div>
           </div>
         </div>
@@ -155,12 +192,12 @@ form button:hover{
         <br>
         <div class="amount">
         <p>wallet address : please make sure your wallet addres is correct</p>
-          <input type="text" placeholder="wallet addres..">
+          <input type="text" placeholder="wallet addres.." name="wallet" required>
         </div>
        
   <br>
   <div class="exchange-rate">Getting exchange rate...</div>
-        <button>Withdraw</button>
+        <button name="me">Withdraw</button>
       </form>
     </div>
     </section>

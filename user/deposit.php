@@ -135,28 +135,90 @@ form button:hover{
   background: #4534fe;
 }
     </style>
-<?php include('nav.php')?>
+<?php include('nav.php');
+
+$servername = "localhost";
+$username = "root";
+$db="buybis";
+$password = "";
+// Create connection
+$conn = new mysqli($servername, $username, $password,$db );
+
+
+// Check connection
+if ($conn->connect_error) {
+  echo"Connection Wahala";
+    exit;
+
+}
+if(isset($_POST['me'])){
+  $amount = $_POST['amount'];
+  $email = $_POST['email']; 
+  $peer = $_POST['peer']; 
+  $method = $_POST['method']; 
+  $dates = $_POST['dates']; 
+   $wallet = $_POST['wallet'];
+ echo $amount;
+ $insert = "INSERT INTO transaction (amount, method, email, wallet, peer, date) VALUES ('$amount','$method','$email','$wallet','$peer','$dates')";
+   $result = mysqli_query($conn,$insert); 
+ }   
+
+?>
+
 <section>
 <div class="wrapper">
       <header>DEPOSIT</header>
       <br><br>
-      <form action="#">
+      <form action="" method="POST">
         <div class="amount">
         <p>Amount of :</p>
-          <input type="number" value="1">
+          <input type="number" name="amount" required>
+          <input type="hidden" value="deposit" name="method">
+          <input type="hidden" value="email" name="email">
+          <input type="hidden" value="dates" name="dates">
+          <input type="hidden" value="wallet" name="wallet">
           <div class="from">
             <div class="select-box">
               <img src="./assets/svg/busd.svg" alt="flag">
-              <select> <!-- Options tag are inserted from JavaScript --> </select>
+              <select name="peer"> <!-- Options tag are inserted from JavaScript --> </select>
             </div>
           </div>
         </div>
        
   <br><br>
-        <button>DEPOSIT</button>
+        <button  name="me">DEPOSIT</button>
       </form>
     </div>
     </section>
+<!-- 
+<script>
+  function deposit(){
+    let amount = $('#amount').val()
+    let method = $('#method').val()
+    let email = $('#email').val()
+    let dates = $('#dates').val()
+    let wallet = $('#wallet').val()
+    let pair = $('#pair').val()
+
+
+    $.ajax({
+      url:"api/deposit.php",
+      type:'post',  
+      data:JSON.stringify({
+          amount:amount,
+          method:method,
+          email:email,
+          dates:dates,
+          wallet:wallet,
+          pair:pair,
+      }),
+      success:function (data,status){
+        console.log(data);
+      }
+    })
+  }
+</script> -->
+
     <script src="assets/js/country-list.js"></script>
     <script src="assets/js/script.js"></script>
     
