@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 09, 2022 at 07:59 PM
+-- Generation Time: Nov 09, 2022 at 11:48 PM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `buybis`
+-- Database: `app_db`
 --
 
 -- --------------------------------------------------------
@@ -29,27 +29,14 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `transaction` (
   `id` int NOT NULL,
-  `email` varchar(1000) NOT NULL,
-  `amount` varchar(1000) NOT NULL,
-  `peer` varchar(1000) NOT NULL,
-  `method` varchar(1000) NOT NULL,
-  `date` varchar(1000) NOT NULL,
-  `wallet` varchar(1000) NOT NULL
+  `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `type` int NOT NULL,
+  `amount` int NOT NULL,
+  `peer` varchar(50) NOT NULL,
+  `approved` int NOT NULL DEFAULT '1',
+  `user` int NOT NULL,
+  `wallet_add` varchar(1000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- Dumping data for table `transaction`
---
-
-INSERT INTO `transaction` (`id`, `email`, `amount`, `peer`, `method`, `date`, `wallet`) VALUES
-(1, 'email', '13', '', 'deposit', 'dates', 'wallet'),
-(2, 'email', '345', '', 'deposit', 'dates', 'wallet'),
-(3, 'email', '2345', 'peer', 'deposit', 'dates', 'wallet'),
-(4, 'email', '1', 'BUSD', 'deposit', 'dates', 'wallet'),
-(5, 'email', '1', 'BUSD', 'deposit', 'dates', 'wallet'),
-(6, 'email', '231111', 'USDT', 'deposit', 'dates', 'wallet'),
-(7, 'email', '2', 'BUSD', 'withdraw', 'dates', 'dfghjkl;'),
-(8, 'email', '23', 'USDT', 'withdraw', 'dates', 'wallet adress');
 
 -- --------------------------------------------------------
 
@@ -59,14 +46,23 @@ INSERT INTO `transaction` (`id`, `email`, `amount`, `peer`, `method`, `date`, `w
 
 CREATE TABLE `users` (
   `id` int NOT NULL,
-  `username` varchar(1000) NOT NULL,
+  `username` varchar(550) NOT NULL,
   `password` varchar(1000) NOT NULL,
-  `email` varchar(1000) NOT NULL,
-  `usdtBalance` varchar(1000) NOT NULL,
-  `busdBalance` varchar(1000) NOT NULL,
-  `refBalance` varchar(1000) NOT NULL,
-  `ref` varchar(1000) NOT NULL
+  `email` varchar(550) NOT NULL,
+  `admin` int NOT NULL DEFAULT '0',
+  `session` varchar(1000) NOT NULL,
+  `banned` int NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `password`, `email`, `admin`, `session`, `banned`) VALUES
+(1, 'thetesters', '$2y$10$R37UGof1nlXyeNDWPU/22.6iRSJPOtjqPu4SPdXqbvzWbPxyp/so.', 'emmanuel09073048353@gmail.com', 0, 'tkn_63696c91278e3', 0),
+(2, 'Tinkoko', '$2y$10$Z/XyioAYKxucj3SwfoYQy.9GVF98VXFb1uj/eW.gwYToP8JTBT8RC', 'vanillanessa4@gmail.com', 0, 'tkn_63697ebd1a6b2', 0),
+(3, 'danieljennifer245@gmail.com', '$2y$10$VI8YtaPlIfDjxxMpetdyAu7YzBktZG.FpC96ckpKhC1l5MLxOu116', 'EKOCTECH@GMAIL.COM', 0, 'tkn_63698080722cd', 0),
+(4, 'thetester', '$2y$10$LEPE/cRfpLaK5D1.K0/svOHSh4Dds0HcDc6PM9UVe7lNkEmQwi7ke', 'EKOCTECH@GMAIL.CO', 0, 'tkn_636c3b64f364c', 0);
 
 --
 -- Indexes for dumped tables
@@ -82,7 +78,9 @@ ALTER TABLE `transaction`
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`);
+  ADD UNIQUE KEY `id` (`id`),
+  ADD UNIQUE KEY `username` (`username`),
+  ADD UNIQUE KEY `email` (`email`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -92,13 +90,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `transaction`
 --
 ALTER TABLE `transaction`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

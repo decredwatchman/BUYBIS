@@ -1,5 +1,15 @@
   <?php
   include("../api/db_lib.php");
+  if(isset($_GET['logout'])){
+    logout();
+    header("Location:./index");
+    
+     }
+
+
+// if(isLoggedin()){
+//  header("Location:user/index");
+//     }
   ?>
    
    <style>

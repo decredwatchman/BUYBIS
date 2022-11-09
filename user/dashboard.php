@@ -1,6 +1,4 @@
-<?php 
 
-     ?>
 <!DOCTYPE html>
 <html>
 
@@ -28,16 +26,7 @@
 
 <body>
 <?php include('nav.php');
-if(isset($_GET['logout'])){
-    logout();
-    header("Location:./index");
-    
-     }
 
-
-// if(isLoggedin()){
-//  header("Location:user/index");
-//     }
 
 $over = get_custom_userdata("over_bal");
 $ref_bal = get_custom_userdata("ref_bal");
