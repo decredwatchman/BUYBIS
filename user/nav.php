@@ -1,4 +1,8 @@
-    <style>
+  <?php
+  include("../api/db_lib.php");
+  ?>
+   
+   <style>
         .nav-bar {
           padding: 10px;
           background-color: #007bff;

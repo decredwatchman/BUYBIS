@@ -9,6 +9,22 @@ if(isset($_GET['logout'])){
 // if(isLoggedin()){
 //  header("Location:user/index");
 //     }
+
+$over = get_custom_userdata("over_bal");
+$ref_bal = get_custom_userdata("ref_bal");
+$usdt_bal = get_custom_userdata("usdt_bal");
+$busd_bal = get_custom_userdata("busd_bal");
+if($over){
+    $over = $over[0]['value'];
+    $ref_bal = $ref_bal[0]['value'];
+    $usdt_bal = $usdt_bal[0]['value'];
+    $busd_bal = $busd_bal[0]['value'];
+}else{
+    $over =0;
+    $ref_bal = 0;
+    $usdt_bal = 0;
+    $busd_bal = 0;
+}
      ?>
 <!DOCTYPE html>
 <html>
@@ -45,9 +61,9 @@ if(isset($_GET['logout'])){
         </div>
         <div class="card-body " style="height: auto;width: 100%;">
             <h4 class="card-title" style="font-size: 18PX;color: rgb(105,108,112);font-family: Aldrich, sans-serif;">WALLET OVERVIEW</h4>
-            <h4 class="card-title" style="line-height: 41px;letter-spacing: 2px;filter: blur(0px) brightness(14%) contrast(59%) grayscale(12%) hue-rotate(41deg);">$ 0.0000345&nbsp;</h4>
+            <h4 class="card-title" style="line-height: 41px;letter-spacing: 2px;filter: blur(0px) brightness(14%) contrast(59%) grayscale(12%) hue-rotate(41deg);">$ <?php echo $over; ?>&nbsp;</h4>
             <h4 class="card-title" style="font-size: 12PX;color: rgb(105,108,112);font-family: Aldrich, sans-serif;">REFERRAL COMMISSION</h4>
-            <h4 class="card-title" style=" font-size: 15PX;line-height: 21px;letter-spacing: 2px;filter: blur(0px) brightness(14%) contrast(59%) grayscale(12%) hue-rotate(41deg);">$ 0.0000345&nbsp;</h4>
+            <h4 class="card-title" style=" font-size: 15PX;line-height: 21px;letter-spacing: 2px;filter: blur(0px) brightness(14%) contrast(59%) grayscale(12%) hue-rotate(41deg);">$ <?php echo $ref_bal; ?>&nbsp;</h4>
             
                 
           <div class="card-title"><a class="btn bbt" href="deposit" type="color:white;" >Deposit</a><a class="btn bbt" href="withdraw" type="color:white;">Witdraw</a></div>
@@ -72,12 +88,12 @@ if(isset($_GET['logout'])){
                 <tbody>
                     <tr>
                         <td><img height="30px" src="assets/svg/tether-441954.svg">USDT</td>
-                        <td>$3070.00</td>
+                        <td>$ <?php echo $usdt_bal; ?></td>
                         
                     </tr>
                     <tr>
                         <td><img height="30px" src="assets/svg/busd.svg">BUSD</td>
-                        <td>$3400.00</td>
+                        <td>$ <?php echo $busd_bal; ?></td>
                         
                     </tr>
                    

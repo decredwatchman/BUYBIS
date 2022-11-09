@@ -40,7 +40,7 @@ section{
   justify-content: center;
   min-height: 80vh;
   padding: 0 10px;
-  background: ;
+  /* background: ; */
 }
 ::selection{
   color: #fff;

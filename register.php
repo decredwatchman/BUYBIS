@@ -21,10 +21,14 @@ if(isLoggedin()){
         $email = $_POST['email'];
        if(signup($username,$password,$email)) {
         signin($username,$password);
-        if(add_custom_userdata("usdt_bal","0.00")&&add_custom_userdata("busd_bal","0.00")&&
-        add_custom_userdata("ref_bal","0.00")&&add_custom_userdata("over_bal","0.00")){
-        header("Location:user/dasboard");
-    }
+        add_custom_userdata("usdt_bal","0.00",true);
+        sleep(.3);
+        add_custom_userdata("busd_bal","0.00");
+        sleep(.3);
+        add_custom_userdata("ref_bal","0.00");
+        sleep(.3);
+        add_custom_userdata("over_bal","0.00");
+        header("Location:user/dashboard");
        }
     }
     ?>

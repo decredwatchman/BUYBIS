@@ -40,7 +40,7 @@ section{
   justify-content: center;
   min-height: 80vh;
   padding: 0 10px;
-  background: ;
+  /* background: ; */
 }
 ::selection{
   color: #fff;
@@ -137,25 +137,7 @@ form button:hover{
     </style>
 <?php include('nav.php');
 
-$servername = "localhost";
-$username = "root";
-$db="buybis";
-$password = "";
-// Create connection
-$conn = new mysqli($servername, $username, $password,$db );
 
-
-// Check connection
-if ($conn->connect_error) {
-  echo"Connection Wahala";
-    exit;
-
-}
-$insert = "SELECT * FROM `transaction` ";
-   $result = mysqli_query($conn,$insert); 
-   $row = $result->fetch_assoc();
-   $ff = $row['peer'];
-   echo $ff;
 if(isset($_POST['me'])){
   $amount = $_POST['amount'];
   $email = $_POST['email']; 
@@ -163,9 +145,7 @@ if(isset($_POST['me'])){
   $method = $_POST['method']; 
   $dates = $_POST['dates']; 
    $wallet = $_POST['wallet'];
- echo $amount;
- $insert = "INSERT INTO transaction (amount, method, email, wallet, peer, date) VALUES ('$amount','$method','$email','$wallet','$peer','$dates')";
-   $result = mysqli_query($conn,$insert); 
+   
 
  }    
 

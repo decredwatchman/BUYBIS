@@ -1,6 +1,8 @@
 <?php
 include "lib.php";
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 /*
 @signup
 @request    POST
@@ -169,11 +171,12 @@ function add_custom_userdata(string $property,string $value){
     $value = $conn->escape_string($value);
     //DESCRIBE `my_table`
     //CREATE TABLE `app_db`.`usr` ( `property` VARCHAR(50) NOT NULL , `value` VARCHAR(1024) NOT NULL , `id` INT NOT NULL AUTO_INCREMENT , UNIQUE (`id`), UNIQUE (`property`)) ENGINE = InnoDB;
-    if(run_query("SHOW TABLES LIKE 'usr_$_id'")){
+    if(run_query("SELECT * FROM `usr_$_id` LIMIT 1")){
         echo"wello";
         $res = run_query("INSERT INTO `app_db`.`usr_$_id` (`property`, `value`) VALUES ('$property','$value')");
+        #echo "INSERT INTO `app_db`.`usr_$_id` (`property`, `value`) VALUES ('$property','$value')";
         if(!$res){
-            popup("ERROR, Data Reg Failed");
+            popup("ERROR, Data Reg Failed1");
         }else{
             return true;
         }
@@ -184,12 +187,12 @@ function add_custom_userdata(string $property,string $value){
             $res = run_query("INSERT INTO `app_db`.`usr_$_id` (`property`, `value`) VALUES ('init','_init_')");
             $res = run_query("INSERT INTO `app_db`.`usr_$_id` (`property`, `value`) VALUES ('$property','$value')");
             if(!$res){
-                popup("ERROR, Data Reg Failed");
+                popup("ERROR, Data Reg Failed2");
             }else{
                 return true;
             }
         }else{
-            popup("ERROR, Data Reg Failed");
+            popup("ERROR, Data Reg Failed3");
         }
         //run_query("DROP TABLE `usr11",true);
         //add_userdata($property,$value);
@@ -273,6 +276,21 @@ function get_all_users(int $page = 1){
 function get_userdata_by_id(int $id){
 
     return run_query("SELECT `id`,`username`,`email`,`admin`,`banned` FROM `users` WHERE id='$id' LIMIT 1");
+
+}
+## type	amount	peer	approved	user	
+
+function AddTransaction(int $type,int $amount, string $peer,string $wallet)
+{
+    global $conn;
+    $id = get_userid();
+    $type = $conn->escape_string($type);
+    $amount = $conn->escape_string($amount);
+    $peer = $conn->escape_string($peer);
+    $wallet = $conn->escape_string($wallet);
+
+
+    return run_query("INSERT INTO `app_db`.`transaction`(`type`, `amount`, `peer`, `approved`, `user`, `wallet_add`) VALUES ('$type','$amount','$peer','1','$id','$wallet')");
 
 }
 
