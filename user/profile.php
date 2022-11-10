@@ -38,9 +38,24 @@ var_dump(get_core_userdata());
                                         <h4 class="card-title" style="font-size: 18PX;color: rgb(105,108,112);font-family: Aldrich, sans-serif;">USERNAME: USER</h4>
                                         <h4 class="card-title" style="font-size: 18PX;color: rgb(105,108,112);font-family: Aldrich, sans-serif;">REFFERALS: 3</h4>
                                         <div>
-                                            <input type="text" value="buybis.com/register?id=1221" readonly>
-                                            <button><img height="25px"src="assets/svg/copy.svg"></button>
-                                         
+                                            <input type="text" value="buybis.com/register?id=1221" id="myInput" readonly>
+                                            <button onclick="myFunction()"><img height="25px"src="assets/svg/copy.svg"></button>
+                                         <script>
+                                            function myFunction() {
+  // Get the text field
+  var copyText = document.getElementById("myInput");
+
+  // Select the text field
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); // For mobile devices
+
+   // Copy the text inside the text field
+  navigator.clipboard.writeText(copyText.value);
+
+  // Alert the copied text
+  alert("Copied the text: " + copyText.value);
+}
+                                         </script>
                                         </div>
 
                                         </div>
@@ -101,7 +116,7 @@ var_dump(get_core_userdata());
                                         }
                                         ?>
                                         <tr>
-                                            <td><?php echo $i['peer'] ?></td>
+                                            <td><img height="20px" src="./assets/svg/<?php echo $i['peer'] ?>.svg" alt="flag"><?php echo $i['peer'] ?></td>
                                             <td><?php echo $t ?></td>
                                             <td><?php echo $i['amount'] ?></td>
                                             <td><?php echo $i['date'] ?></td>

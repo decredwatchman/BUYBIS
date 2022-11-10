@@ -139,18 +139,18 @@ form button:hover{
 
 
 // Deposit 0 : Withd
-if(isset($_POST['Deposit'])){
-  $amount = $_POST['amount'];
-  $email = $_POST['email']; 
-  $peer = $_POST['peer']; 
-  $method = $_POST['method']; 
-  $dates = $_POST['dates']; 
-  $wallet = $_POST['wallet'];
- echo $amount;
- if(!AddTransaction($method,$amount,$peer,$wallet)){
-  popup("FUCK !! It DIDNT WORK!!");
- }
- }   
+// if(isset($_POST['Deposit'])){
+//   $amount = $_POST['amount'];
+//   $email = $_POST['email']; 
+//   $peer = $_POST['peer']; 
+//   $method = $_POST['method']; 
+//   $dates = $_POST['dates']; 
+//   $wallet = $_POST['wallet'];
+//  echo $amount;
+//  if(!AddTransaction($method,$amount,$peer,$wallet)){
+//   popup("FUCK !! It DIDNT WORK!!");
+//  }
+//  }   
 
 ?>
 
@@ -158,14 +158,10 @@ if(isset($_POST['Deposit'])){
 <div class="wrapper">
       <header>DEPOSIT</header>
       <br><br>
-      <form action="" method="POST">
+      <form action="confirm" method="POST">
         <div class="amount">
         <p>Amount of :</p>
           <input type="number" name="amount" required>
-          <input type="hidden" value="0" name="method">
-          <input type="hidden" value="email" name="email">
-          <input type="hidden" value="dates" name="dates">
-          <input type="text" value="wallet" name="wallet">
           <div class="from">
             <div class="select-box">
               <img src="./assets/svg/busd.svg" alt="flag">
@@ -175,7 +171,7 @@ if(isset($_POST['Deposit'])){
         </div>
        
   <br><br>
-        <button  name="Deposit">DEPOSIT</button>
+        <button  name="pay">DEPOSIT</button>
       </form>
     </div>
     </section>

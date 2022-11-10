@@ -1,5 +1,5 @@
 let country_list = {
-    "USDT" : "tether-441954",
+    "USDT" : "usdt",
     "BUSD" : "busd"
    
 }

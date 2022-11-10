@@ -32,7 +32,10 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
-
+p{
+    text-align:center;
+    width:300px
+}
 
 section{
   display: flex;
@@ -137,8 +140,12 @@ form button:hover{
     </style>
 <?php include('nav.php');
 
-
-if(isset($_POST['withdraw'])){
+if(isset($_POST['pay'])){
+    $amt = $_POST['amount'];
+    $per = $_POST['peer'];
+}
+// Deposit 0 : Withd
+if(isset($_POST['Deposit'])){
   $amount = $_POST['amount'];
   $email = $_POST['email']; 
   $peer = $_POST['peer']; 
@@ -146,46 +153,91 @@ if(isset($_POST['withdraw'])){
   $dates = $_POST['dates']; 
   $wallet = $_POST['wallet'];
  echo $amount;
- if(!AddTransaction($method,$amount,$peer,$wallet)){
-  popup("FUCK !! It DIDNT WORK!!");
+ if(AddTransaction($method,$amount,$peer,$wallet)){
+  header('Location:profile');
  }
  }   
- 
 
 ?>
+
 <section>
 <div class="wrapper">
-      <header>Withdraw</header>
+      <header>DEPOSIT</header>
       <br><br>
-      <form action="" method="post">
+      <form action="" method="POST">
         <div class="amount">
-        <p>Amount of :</p>
-        <input type="number" name="amount" required>
-          <input type="hidden" value="1" name="method">
+        <p>Deposit $<?php echo $amt ?> of <?php echo $per ?> into the below wallet Address </p>
+        <br><br> 
+        <p>bc1qxy2kgdygjrsqtzq2n0 yrf2493p83kkfjhx0wlh</p>
+        <br><br>
+        <p class="text-danger">please confirm the address </p><br>
+  
+                                        
+          <input type="hidden" name="amount" value="<?php echo $amt ?>" required>
+          <input type="hidden" value="0" name="method">
           <input type="hidden" value="email" name="email">
           <input type="hidden" value="dates" name="dates">
-          <div class="from">
-            <div class="select-box">
-              <img src="./assets/svg/busd.svg" alt="flag">
-              <select name="peer"> <!-- Options tag are inserted from JavaScript --> </select>
-            </div>
-          </div>
-        </div>
-        <br>
-        <br>
-        <div class="amount">
-        <p>wallet address : please make sure your wallet addres is correct</p>
-          <input type="text" placeholder="wallet addres.." name="wallet" required>
+          <input type="hidden" value="N/A" name="wallet">          
+          <input type="hidden" value="<?php echo $per ?>" name="peer">
+          
+
+
+
+          <input type="text" value="bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh" id="myInput" readonly>
+                                            <p onclick="myFunction()"><img height="25px"src="assets/svg/copy.svg"></p>
+                                         <script>
+                                            function myFunction() {
+  // Get the text field
+  var copyText = document.getElementById("myInput");
+
+  // Select the text field
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); // For mobile devices
+
+   // Copy the text inside the text field
+  navigator.clipboard.writeText(copyText.value);
+
+  // Alert the copied text
+  console.log('coppied')
+}
+                                         </script>
+         
         </div>
        
-  <br>
-  <div class="exchange-rate">Getting exchange rate...</div>
-        <button name="withdraw">Withdraw</button>
+  <br><br>
+        <button  name="Deposit">DEPOSIT</button>
       </form>
     </div>
     </section>
-    <script src="assets/js/country-list.js"></script>
-    <script src="assets/js/script.js"></script>
+<!-- 
+<script>
+  function deposit(){
+    let amount = $('#amount').val()
+    let Depositthod = $('#method').val()
+    let email = $('#email').val()
+    let dates = $('#dates').val()
+    let wallet = $('#wallet').val()
+    let pair = $('#pair').val()
+
+
+    $.ajax({
+      url:"api/deposit.php",
+      type:'post',  
+      data:JSON.stringify({
+          amount:amount,
+          method:method,
+          email:email,
+          dates:dates,
+          wallet:wallet,
+          pair:pair,
+      }),
+      success:function (data,status){
+        console.log(data);
+      }
+    })
+  }
+</script> -->
+
     
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>

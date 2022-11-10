@@ -1,4 +1,6 @@
-<?php include('includes/header.php'); ?>
+<?php include('includes/header.php');
+  include("./api/db_lib.php");
+?>
              
 <div class="container-fluid">
                 <!-- Page Heading -->
@@ -98,8 +100,9 @@
                                     <thead>
                                         <tr>
                                             <th>username</th>
-                                            <th>amount</th>
+                                            <th>peer</th>
                                             <th>method</th>
+                                            <th>amount</th>
                                             <th>account bal</th>
                                             <th>date</th>
                                             <th>process</th>
@@ -107,29 +110,60 @@
                                     </thead>
                               
                                     <tbody>
-                                        <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>$6888</td>
-                                            <td>withdraw</td>
-                                            <td>61</td>
-                                            <td>2011/04/25</td>
-                                            <td>
-                                                <button class="btn btn-success" style="margin:10px">approve</button>
-                                                <button class="btn btn-danger" style="margin:10px">decline</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>$6888</td>
-                                            <td>deposit</td>
-                                            <td>61</td>
-                                            <td>2011/04/25</td>
-                                            <td>
-                                                <button class="btn btn-success" style="margin:10px">approve</button>
-                                                <button class="btn btn-danger" style="margin:10px">decline</button>
-                                            </td>
-                                        </tr>
+                                    <?php
+                                        $id = get_userid();
+                                        $res = run_query("SELECT * FROM `app_db`.`transaction` ");
+                                        if($res){
 
+                                        
+                                        foreach($res as $i){
+                                        $t = 'unknown';
+                                        switch ($i['type']) {
+                                            case 0:
+                                                $t = "Deposit";
+                                                break;
+                                            case 1:
+                                                $t = "Withdraw";
+                                                # code...
+                                                break;
+                                            case 2:
+                                                $t = "Trade";
+                                                # code...
+                                                break;
+                                        }
+                                        $s = "Unknown";
+                                        switch ($i['approved']) {
+                                            case 0:
+                                                $s = "FAILED";
+                                                break;
+                                            case 1:
+                                                $s = "PENDING";
+                                                # code...
+                                                break;
+                                            case 2:
+                                                $s = "APPROVED";
+                                                # code...
+                                                break;
+                                        }
+                                        ?>
+                                        <tr> 
+                                            <td>Tiger Nixon</td>
+                                            <td><?php echo $i['peer'] ?></td>
+                                            <td><?php echo $t ?></td>
+                                            <td><?php echo $i['amount'] ?></td>
+                                            <td>$500</td> 
+                                            <td><?php echo $i['date'] ?></td> 
+                                            <td>
+                                                <button class="btn btn-success" style="margin:10px">approve</button>
+                                                <button class="btn btn-danger" style="margin:10px">decline</button>
+                                            </td>
+                                        </tr>
+                                         <?php
+                                        }}
+
+                                        
+                                        ?>
+                              
                                     </tbody>
                                 </table>
                             </div>
