@@ -53,7 +53,7 @@ var_dump(get_core_userdata());
   navigator.clipboard.writeText(copyText.value);
 
   // Alert the copied text
-  alert("Copied the text: " + copyText.value);
+  alert("Copied: " + copyText.value);
 }
                                          </script>
                                         </div>
@@ -71,7 +71,7 @@ var_dump(get_core_userdata());
                                     <thead>
                                         <tr>
                                             <th>Peer</th>
-                                            <th>Office</th>
+                                            <th>Method</th>
                                             <th>Amount</th>
                                             <th>date</th>
                                             <th>Status</th>
@@ -83,7 +83,7 @@ var_dump(get_core_userdata());
                                         $id = get_userid();
                                         $res = run_query("SELECT * FROM `app_db`.`transaction` WHERE `user`='$id'");
                                         if($res){
-
+  
                                         
                                         foreach($res as $i){
                                         $t = 'unknown';
