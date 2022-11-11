@@ -139,14 +139,20 @@ form button:hover{
 <section>
 <div class="wrapper">
       <header>SWAP</header>
-      <form action="#">
+  <?php 
+  if(isset($_POST['from'],$_POST['peer']))
+  
+  ?>
+
+
+      <form action="">
         <div class="amount">
         <p>Amount of :</p>
-          <input type="number" value="1">
+          <input type="number" value="1" name="from">
           <div class="from">
             <div class="select-box">
               <img src="./assets/svg/busd.svg" alt="flag">
-              <select> <!-- Options tag are inserted from JavaScript --> </select>
+              <select name="peer"> <!-- Options tag are inserted from JavaScript --> </select>
             </div>
           </div>
         </div>
