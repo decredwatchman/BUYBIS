@@ -159,7 +159,7 @@ form button:hover{
           <input type="number" value="1">
           <div class="to">
             <div class="select-box">
-              <img src="./assets/svg/tether-441954.svg" alt="flag">
+              <img src="./assets/svg/usdt.svg" alt="flag">
               <select> <!-- Options tag are inserted from JavaScript --> </select>
             </div>
           </div>
