@@ -143,6 +143,8 @@ form button:hover{
 if(isset($_POST['pay'])){
     $amt = $_POST['amount'];
     $per = $_POST['peer'];
+}else{
+  
 }
 // Deposit 0 : Withd
 if(isset($_POST['Deposit'])){
