@@ -78,7 +78,7 @@ if($over){
           
                 <tbody>
                     <tr>
-                        <td><img height="30px" src="assets/svg/tether-441954.svg">USDT</td>
+                        <td><img height="30px" src="assets/svg/usdt.svg">USDT</td>
                         <td>$ <?php echo $usdt_bal; ?></td>
                         
                     </tr>

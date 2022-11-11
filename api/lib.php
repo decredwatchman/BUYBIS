@@ -21,7 +21,7 @@ if ($conn->connect_error) {
 
 
 function run_query(string $query){
-
+        try{
         global $conn;
         //$query = $conn->escape_string($query);
         $result = $conn->query($query);
@@ -46,8 +46,12 @@ function run_query(string $query){
                 return 1;
             }else{
                 return 0;
+
             }
         }
+    }catch(mysqli_sql_exception $e){
+        return 0;
+    }
     
     
 }
