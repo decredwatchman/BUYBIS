@@ -113,6 +113,7 @@
                                     <?php
                                         $id = get_userid();
                                         $res = run_query("SELECT * FROM `app_db`.`transaction` ");
+                                       
                                         if($res){
 
                                         
@@ -154,8 +155,8 @@
                                             <td>$500</td> 
                                             <td><?php echo $i['date'] ?></td> 
                                             <td>
-                                                <button class="btn btn-success" style="margin:10px">approve</button>
-                                                <button class="btn btn-danger" style="margin:10px">decline</button>
+                                                <button class="btn btn-success" id="approve" style="margin:10px">approve</button>
+                                                <button class="btn btn-danger" id="decline" style="margin:10px">decline</button>
                                             </td>
                                         </tr>
                                          <?php
@@ -192,6 +193,8 @@
                                     <?php
                                         $res = run_query_single("SELECT * FROM `app_db`.`gen_custom` WHERE  `property`='usdt/busd'");
                                         $res2 = run_query_single("SELECT * FROM `app_db`.`gen_custom` WHERE  `property`='busd/usdt'");
+                                        $res3 = run_query_single("SELECT * FROM `app_db`.`gen_custom` WHERE  `property`='usdtaddress'");
+                                        $res4 = run_query_single("SELECT * FROM `app_db`.`gen_custom` WHERE  `property`='busdaddress'");
                                         
                                         ?>
                                         <tr> 
@@ -212,7 +215,26 @@
 
                                             </td>
                                         </tr>
-                                        
+                                        <tr> 
+                                            <td>wallet address</td>
+                                            <td>USDT DEPOSIT ADDRESS</td>
+                                            <td><?php echo $res3['value']?></td>
+
+                                            <td>
+                                            <button class="btn btn-success" style="margin:10px" onclick="update_extange_rate('walletaddress','walletadress')">Update</button>
+
+                                            </td>
+                                        </tr>
+                                        <tr> 
+                                            <td>wallet address</td>
+                                            <td>BUSD DEPOSIT ADDRESS</td>
+                                            <td><?php echo $res4['value']?></td>
+
+                                            <td>
+                                            <button class="btn btn-success" style="margin:10px" onclick="update_extange_rate('walletaddress','walletadress')">Update</button>
+
+                                            </td>
+                                        </tr>
                                          <?php
                                         
 

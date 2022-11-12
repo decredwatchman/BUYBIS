@@ -11,7 +11,7 @@ function update_extange_rate(field, a,b)
 {
 
 
-    v1 = prompt('1 '+a+' equivelent Howmany '+b);
+    v1 = prompt('1 '+a+' equivelent How many '+b);
 
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open( "POST", "updater.php", false ); // false for synchronous request
@@ -24,4 +24,13 @@ function update_extange_rate(field, a,b)
     xmlHttp.send("action=updatecustom&property="+field+"&value="+v1);
     window.location.reload();  
       
+}
+
+
+function approve(){
+    let xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "POST", "updater.php", false ); 
+    let app = document.getElementById('approve');
+    let dec = document.getElementById('decline');
+    
 }
