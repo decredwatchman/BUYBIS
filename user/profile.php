@@ -27,6 +27,14 @@
 <body>
 <?php include('nav.php');
 var_dump(get_core_userdata());
+//calculate the ammount of ref using user id
+
+$username = get_core_userdata("username");
+if($username){
+    $username = $username[4]['username'];
+}
+
+
 ?>
 
                                 <div class="col">
@@ -35,7 +43,7 @@ var_dump(get_core_userdata());
                                             <p class=" m-0 font-weight-bold">USER INFORMATION</p>
                                         </div>
                                         <div class="card-body">
-                                        <h4 class="card-title" style="font-size: 18PX;color: rgb(105,108,112);font-family: Aldrich, sans-serif;">USERNAME: USER</h4>
+                                        <h4 class="card-title" style="font-size: 18PX;color: rgb(105,108,112);font-family: Aldrich, sans-serif;">USERNAME: <?php echo $username ?></h4>
                                         <h4 class="card-title" style="font-size: 18PX;color: rgb(105,108,112);font-family: Aldrich, sans-serif;">REFFERALS: 3</h4>
                                         <div>
                                             <input type="text" value="buybis.com/register?id=1221" id="myInput" readonly>

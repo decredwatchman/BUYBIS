@@ -33,11 +33,11 @@ if($_POST['action']=='updatecustom'){
 }if($_POST['action']=='getout'){
     $id = $_POST['id'];
 
-    $res =run_query("UPDATE `transaction` SET `approved`='2' WHERE `id`='$id'");
+    $res =run_query("UPDATE `transaction` SET `approved`='0' WHERE `id`='$id'");
     if($res){
-        print("Approved");
+        print("disapproved");
     }else{
-        print("Disapproved");
+        print("getat");
     }
 
 }
