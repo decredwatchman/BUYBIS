@@ -27,10 +27,16 @@ function update_extange_rate(field, a,b)
 }
 
 
-function approve(){
+function approve(id){
     let xmlHttp = new XMLHttpRequest();
     xmlHttp.open( "POST", "updater.php", false ); 
-    let app = document.getElementById('approve');
-    let dec = document.getElementById('decline');
+    xmlHttp.onload = function() {
+        alert(this.responseText)  
+        // If you wanted to call the function in here, then just make another whole xhr var and send it in this function
+    }
+    xmlHttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    //xmlHttp.send();
+    xmlHttp.send("action=approveT&id="+id);
+    window.location.reload();  
     
 }

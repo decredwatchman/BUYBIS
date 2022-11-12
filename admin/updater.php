@@ -20,18 +20,15 @@ if($_POST['action']=='updatecustom'){
     
 
 
-}if($_POST['action']=='approve'){
-    $property = $_POST['property'];
-    $value = $_POST['value'];
-    $res =run_query("UPDATE `gen_custom` SET `value`='$value'  WHERE `property`='$property'");
+}if($_POST['action']=='approveT'){
+    $id = $_POST['id'];
+
+    $res =run_query("UPDATE `transaction` SET `approved`='2' WHERE `id`='$id'");
     if($res){
-        print("Updated");
+        print("Approved");
     }else{
-        print("NotUpdated");
+        print("Disapproved");
     }
-
-    
-
 
 }
 

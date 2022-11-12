@@ -112,12 +112,13 @@
                                     <tbody>
                                     <?php
                                         $id = get_userid();
-                                        $res = run_query("SELECT * FROM `app_db`.`transaction` ");
-                                       
+                                        $res = run_query("SELECT * FROM `app_db`.`transaction` WHERE `approved`='0' ");
+                                        
                                         if($res){
 
                                         
                                         foreach($res as $i){
+                                        $id_btn=$i['id'];
                                         $t = 'unknown';
                                         switch ($i['type']) {
                                             case 0:
@@ -155,8 +156,8 @@
                                             <td>$500</td> 
                                             <td><?php echo $i['date'] ?></td> 
                                             <td>
-                                                <button class="btn btn-success" id="approve" style="margin:10px">approve</button>
-                                                <button class="btn btn-danger" id="decline" style="margin:10px">decline</button>
+                                                <button class="btn btn-success" id="approve" onclick="approve(<?php echo $id_btn;?>)" style="margin:10px">approve</button>
+                                                <button class="btn btn-danger" id="decline" onclick="disapprove(<?php echo $id_btn;?>)" style="margin:10px">decline</button>
                                             </td>
                                         </tr>
                                          <?php
