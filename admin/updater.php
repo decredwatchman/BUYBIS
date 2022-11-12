@@ -30,6 +30,16 @@ if($_POST['action']=='updatecustom'){
         print("Disapproved");
     }
 
+}if($_POST['action']=='getout'){
+    $id = $_POST['id'];
+
+    $res =run_query("UPDATE `transaction` SET `approved`='2' WHERE `id`='$id'");
+    if($res){
+        print("Approved");
+    }else{
+        print("Disapproved");
+    }
+
 }
 
 //}

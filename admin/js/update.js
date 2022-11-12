@@ -40,3 +40,16 @@ function approve(id){
     window.location.reload();  
     
 }
+function disapprove(id){
+    let xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "POST", "updater.php", false ); 
+    xmlHttp.onload = function() {
+        alert(this.responseText)  
+        // If you wanted to call the function in here, then just make another whole xhr var and send it in this function
+    }
+    xmlHttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    //xmlHttp.send();
+    xmlHttp.send("action=getout&id="+id);
+    window.location.reload();  
+    
+}
