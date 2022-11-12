@@ -198,7 +198,27 @@ function add_custom_userdata(string $property,string $value){
         //add_userdata($property,$value);
     }
 
-}   
+}
+
+function add_custom_data(string $property,string $value){
+    global $conn;
+    $_id = $conn->escape_string(get_userid());
+    $property = $conn->escape_string($property);
+    $value = $conn->escape_string($value);
+    //DESCRIBE `my_table`
+    //CREATE TABLE `app_db`.`usr` ( `property` VARCHAR(50) NOT NULL , `value` VARCHAR(1024) NOT NULL , `id` INT NOT NULL AUTO_INCREMENT , UNIQUE (`id`), UNIQUE (`property`)) ENGINE = InnoDB;
+
+        //table has not been created
+
+            // $res = run_query("INSERT INTO `app_db`.`gen_custom` (`property`, `value`) VALUES ('init','_init_')");
+            $res = run_query_single("INSERT INTO `app_db`.`gen_custom` (`property`, `value`) VALUES ('$property','$value')");
+
+            return $res;
+        //run_query("DROP TABLE `usr11",true);
+        //add_userdata($property,$value);
+}
+
+ 
 /**
  * Updates Core userdata
  * id/admin not allowed
