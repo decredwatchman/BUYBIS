@@ -14,7 +14,7 @@ if($_POST['action']=='updatecustom'){
     if($res){
         print("Updated");
     }else{
-        print("Not Updated");
+        print("NotUpdated");
     }
 
     

@@ -22,6 +22,6 @@ function update_extange_rate(field, a,b)
     xmlHttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     //xmlHttp.send();
     xmlHttp.send("action=updatecustom&property="+field+"&value="+v1);
-    window.location.reload();
+    window.location.reload();  
       
 }
