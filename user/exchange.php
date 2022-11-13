@@ -148,11 +148,11 @@ form button:hover{
       <form action="">
         <div class="amount">
         <p>Amount of :</p>
-          <input type="number" value="1" name="from">
+          <input type="number" value="1" name="from" onchange="update_ext()" id="in">
           <div class="from">
             <div class="select-box">
               <img src="./assets/svg/busd.svg" alt="flag">
-              <select name="peer"> <!-- Options tag are inserted from JavaScript --> </select>
+              <select name="peer" id="peer"onchange="update_ext()"> <!-- Options tag are inserted from JavaScript --> </select>
             </div>
           </div>
         </div>
@@ -162,7 +162,7 @@ form button:hover{
        
           <div class="amount">
        
-          <input type="number" value="1" readonly>
+          <input type="text" value="0" readonly id="aaa">
          
         </div>
 
@@ -175,6 +175,9 @@ form button:hover{
     <script src="assets/js/trade/script.js"></script>
     
     <script src="assets/js/jquery.min.js"></script>
+    <script src="../api/update.js">
+    </script>
+
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
     <script src="assets/js/Simple-Slider.js"></script>

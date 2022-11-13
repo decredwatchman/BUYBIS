@@ -21,7 +21,8 @@ function getExtange(string $peer, int $amount)
 
 
 if(isset($_POST['action'])){
-    // TODO Js response
+    //TODO Js response
+
     if($_POST['action']=='ext'){
         if(isset($_POST['amount'],$_POST['peer'])){
             $peer = $_POST['peer'];
