@@ -53,6 +53,10 @@ if(isset($_POST['action'])){
 
     if($_POST['action']=='ext'){
         if(isset($_POST['amount'],$_POST['peer'])){
+           if($_POST['amount']==""){
+            echo 0;
+            exit;
+           }
             $peer = $_POST['peer'];
             $amount = $_POST['amount'];
             echo getExtange($peer, $amount);

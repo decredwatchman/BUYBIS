@@ -34,7 +34,7 @@
 }
 p{
     text-align:center;
-    width:300px
+    width:auto;
 }
 
 section{
@@ -50,12 +50,13 @@ section{
   background: #675AFE;
 }
 .wrapper{
-  width: 370px;
-  padding: 30px;
+  width: auto;
+  padding: 10px;
   border-radius: 7px;
   background: #fff;
   box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.05);
 }
+
 .wrapper header{
   font-size: 28px;
   font-weight: 500;
@@ -156,9 +157,13 @@ if(isset($_POST['Deposit'])){
   $wallet = $_POST['wallet'];
  echo $amount;
  if(AddTransaction($method,$amount,$peer,$wallet)){
+  //there is an error withnthwe location
   header('Location:profile');
  }
  }   
+  
+ $peer = $_POST['peer']; 
+$pay_wallet =  run_query_single("SELECT `value` FROM `gen_custom` WHERE `property`='$peer'")['value'];
 
 ?>
 
@@ -167,10 +172,9 @@ if(isset($_POST['Deposit'])){
       <header>DEPOSIT</header>
       <br><br>
       <form action="" method="POST">
-        <div class="amount">
         <p>Deposit $<?php echo $amt ?> of <?php echo $per ?> into the below wallet Address </p>
         <br><br> 
-        <p>bc1qxy2kgdygjrsqtzq2n0 yrf2493p83kkfjhx0wlh</p>
+        <span><?php echo $pay_wallet ?></span>
         <br><br>
         <p class="text-danger">please confirm the address </p><br>
   
@@ -185,7 +189,7 @@ if(isset($_POST['Deposit'])){
 
 
 
-          <input type="text" value="bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh" id="myInput" readonly>
+          <input type="text" value="<?php echo $pay_wallet ?>" id="myInput" readonly>
                                             <p onclick="myFunction()"><img height="25px"src="assets/svg/copy.svg"></p>
                                          <script>
                                             function myFunction() {
@@ -204,7 +208,7 @@ if(isset($_POST['Deposit'])){
 }
                                          </script>
          
-        </div>
+       
        
   <br><br>
         <button  name="Deposit">DEPOSIT</button>
