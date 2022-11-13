@@ -161,14 +161,9 @@ form button:hover{
        
        
           <div class="amount">
-        <p>Amount of :</p>
-          <input type="number" value="1">
-          <div class="to">
-            <div class="select-box">
-              <img src="./assets/svg/usdt.svg" alt="flag">
-              <select> <!-- Options tag are inserted from JavaScript --> </select>
-            </div>
-          </div>
+       
+          <input type="number" value="1" readonly>
+         
         </div>
 
         <div class="exchange-rate">Getting exchange rate...</div>
@@ -176,8 +171,8 @@ form button:hover{
       </form>
     </div>
     </section>
-    <script src="assets/js/country-list.js"></script>
-    <script src="assets/js/script.js"></script>
+    <script src="assets/js/trade/country-list.js"></script>
+    <script src="assets/js/trade/script.js"></script>
     
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
