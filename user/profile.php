@@ -31,7 +31,7 @@ var_dump(get_core_userdata());
 
 $username = get_core_userdata("username");
 if($username){
-    $username = $username[4]['username'];
+    $username = $username['username'];
 }
 
 
