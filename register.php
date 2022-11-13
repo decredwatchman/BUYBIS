@@ -37,11 +37,39 @@ if(isLoggedin()){
             <p>Manage your Buybis</p>
             <input type="text" placeholder="username" name="username" id="" required>
             <input type="email" placeholder="Email address" name="email" id="" required>
-            <input type="password" placeholder="Password" name="password" id="" required>
-            <input type="password" placeholder="confirm Password" name="" id="" required>
-            <button type="submit" name="register" class="signin">CREATE ACCOUNT</button>
+            <input type="password" placeholder="Password" name="password" id="pass" required>
+            <span id="wrong_pass_alert"></span>
+
+            <input type="password" placeholder="confirm Password" name="" id="confirm_pass"  onkeyup="validate_password()" required>
+            <button type="submit" id="create" name="register" class="signin">CREATE ACCOUNT</button>
             <p class="account">Already have an account? <a href="login"> Login</a></p>
         </form>
     </section>
+    <script>
+        function validate_password() {
+ 
+            var pass = document.getElementById('pass').value;
+            var confirm_pass = document.getElementById('confirm_pass').value;
+            if (pass != confirm_pass) {
+                document.getElementById('wrong_pass_alert').style.color = 'red';
+                
+                document.getElementById('create').disabled = true;
+                document.getElementById('create').style.opacity = (0.4);
+            } else {
+                document.getElementById('wrong_pass_alert').style.color = 'green';
+                document.getElementById('create').disabled = false;
+                document.getElementById('create').style.opacity = (1);
+            }
+        }
+ 
+        // function wrong_pass_alert() {
+        //     if (document.getElementById('pass').value != "" &&
+        //         document.getElementById('confirm_pass').value != "") {
+        //         alert("Your response is submitted");
+        //     } else {
+        //         alert("Please fill all the fields");
+        //     }
+        // }
+    </script>
 </body>
 </html>
