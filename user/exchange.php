@@ -148,11 +148,11 @@ form button:hover{
       <form action="">
         <div class="amount">
         <p>Amount of :</p>
-          <input type="number" value="1" name="from" onchange="update_ext()" id="in">
+          <input type="number" value="1" name="from" onkeyup="update_ext()" id="in">
           <div class="from">
             <div class="select-box">
               <img src="./assets/svg/busd.svg" alt="flag">
-              <select name="peer" id="peer"onchange="update_ext()"> <!-- Options tag are inserted from JavaScript --> </select>
+              <select name="peer" id="peer"onkeyup="update_ext()"> <!-- Options tag are inserted from JavaScript --> </select>
             </div>
           </div>
         </div>

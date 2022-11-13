@@ -77,7 +77,7 @@
                                             <td>$500</td> 
                                             <td><?php echo $i['date'] ?></td> 
                                             <td>
-                                                <button class="btn btn-success" id="approve" onclick="approve(<?php echo $id_btn;?>)" style="margin:10px">approve</button>
+                                                <button class="btn btn-success" id="approve" name="up_price" onclick="approve(<?php echo $id_btn;?>)" style="margin:10px">approve</button>
                                                 <button class="btn btn-danger" id="decline" onclick="disapprove(<?php echo $id_btn;?>)" style="margin:10px">decline</button>
                                             </td>
                                         </tr>

@@ -6,14 +6,15 @@ include "db_lib.php";
 
 function getExtange(string $peer, int $amount)
 {
+    
     global $conn;
     $peer = $conn->escape_string($peer);
     $amount = $conn->escape_string($amount);
     $ext = run_query_single("SELECT `value` FROM `gen_custom` WHERE `property`='$peer'")['value'];
     if($ext){
         return $amount*$ext;
-    }else{
-        return "0...";
+    }if($ext ==""){
+        return 0;
  
     }
     # code...
