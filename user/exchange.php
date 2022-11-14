@@ -195,8 +195,8 @@ form button:hover{
 
   ?>
 
-
-      <form action="">
+ 
+      <form action="" method="post">
         <div class="amount">
         <p>Amount of :</p>
           <input type="number" value="1" name="from" onkeyup="update_ext()" id="in">
@@ -216,8 +216,9 @@ form button:hover{
           <input type="text" value="0" readonly id="aaa">
          
         </div>
-
-        <div class="exchange-rate">Getting exchange rate...</div>
+        <br><br>
+<!-- 
+        <div class="exchange-rate">Getting exchange rate...</div> -->
         <button>TRADE</button>
       </form>
     </div>

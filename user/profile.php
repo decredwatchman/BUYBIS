@@ -34,7 +34,7 @@ if($username){
     $username = $username['username'];
 }
 
-
+$myid = get_userid();
 ?>
 
                                 <div class="col">
@@ -46,7 +46,7 @@ if($username){
                                         <h4 class="card-title" style="font-size: 18PX;color: rgb(105,108,112);font-family: Aldrich, sans-serif;">USERNAME: <?php echo $username ?></h4>
                                         <h4 class="card-title" style="font-size: 18PX;color: rgb(105,108,112);font-family: Aldrich, sans-serif;">REFFERALS: 3</h4>
                                         <div>
-                                            <input type="text" value="buybis.com/register?id=1221" id="myInput" readonly>
+                                            <input type="text" value="buybis.com/register?id=<?php echo $myid ?>" id="myInput" readonly>
                                             <button onclick="myFunction()"><img height="25px"src="assets/svg/copy.svg"></button>
                                          <script>
                                             function myFunction() {

@@ -37,10 +37,21 @@ if(isLoggedin()){
             <p>Manage your Buybis</p>
             <input type="text" placeholder="username" name="username" id="" required>
             <input type="email" placeholder="Email address" name="email" id="" required>
+        
             <input type="password" placeholder="Password" name="password" id="pass" required>
             <span id="wrong_pass_alert"></span>
 
             <input type="password" placeholder="confirm Password" name="" id="confirm_pass"  onkeyup="validate_password()" required>
+            
+
+<?php 
+if(isset($_GET['id'])){
+$ref = $_GET['id'];
+ echo '<input type="hidden" name="ref" value="'.$ref.'" >';
+}
+?>
+
+
             <button type="submit" id="create" name="register" class="signin">CREATE ACCOUNT</button>
             <p class="account">Already have an account? <a href="login"> Login</a></p>
         </form>
