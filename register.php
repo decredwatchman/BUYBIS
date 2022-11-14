@@ -19,15 +19,24 @@ if(isLoggedin()){
         $username = $_POST['username'];
         $password = $_POST['password'];
         $email = $_POST['email'];
+        ///there is an error here when no referral
+        $my_ref = $_POST['ref'];
        if(signup($username,$password,$email)) {
         signin($username,$password);
         add_custom_userdata("usdt_bal","0.00",true);
         sleep(.3);
         add_custom_userdata("busd_bal","0.00");
         sleep(.3);
+        add_custom_userdata("my_ref","$my_ref");
+        sleep(.3);
+        // update_custom_userdata("ref_".get_userid(),"1",true,id:$my_ref);
+        // sleep(.3);
         add_custom_userdata("ref_bal","0.00");
         sleep(.3);
         add_custom_userdata("over_bal","0.00");
+        sleep(.3);
+        //throw maSSIVE ERROOR
+         runquery("INSERT INTO `usr_$my_ref`(`property`, `value`) VALUES ('ref_".get_userid()."','".get_userid()."')");
         header("Location:user/dashboard");
        }
     }
