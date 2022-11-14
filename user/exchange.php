@@ -139,9 +139,60 @@ form button:hover{
 <section>
 <div class="wrapper">
       <header>SWAP</header>
-  <?php 
-  if(isset($_POST['from'],$_POST['peer']))
+  <?php
+  function get_usdt_Bal()
+  {
+      $usr = get_userid();
+      
+      $usdt = run_query_single("SELECT `value` FROM `usr_$usr` WHERE `property`='usdt'");
   
+      if($usdt){
+          return $usdt['value'];
+      }
+      return 0;
+      
+  }
+  function get_busd_Bal()
+  {
+      $usr = get_userid();
+      
+      $busd = run_query_single("SELECT `value` FROM `usr_$usr` WHERE `property`='busd'");
+  
+      if($busd){
+          return $busd['value'];
+      }
+      return 0;
+      
+  }
+  function update_bal(){
+
+  }
+  if(isset($_POST['from'],$_POST['peer'])){
+    if($_POST['peer']=="busd/usdt"){
+      if(get_busd_Bal()>=$_POST['from']){
+        // to do Update Balance
+        $res = update_custom_userdata("",100);
+        $res = run_query("");
+        if(true){
+          popup("Extanged");
+        }
+      }else{
+        popup("Not Enough Balance");
+      }
+    }else{
+      if(get_usdt_Bal()>=$_POST['from']){
+        // to do Update Balance
+        $res = update_custom_userdata("",100);
+
+        if(true){
+          popup("Extanged");
+        }
+      }else{
+        popup("Not Enough Balance");
+      }
+    }
+  }
+
   ?>
 
 
