@@ -232,7 +232,7 @@ form button:hover{
     }
     xmlHttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     //xmlHttp.send();
-    xmlHttp.send("action=getout&id="+id);
+    xmlHttp.send("action=bal_enough);
     window.location.reload();  
     
 }
