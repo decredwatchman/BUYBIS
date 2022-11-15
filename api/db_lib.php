@@ -197,7 +197,7 @@ function add_custom_userdata(string $property,string $value){
         //run_query("DROP TABLE `usr11",true);
         //add_userdata($property,$value);
     }
-
+}
 
     function add_custom_userdata_id(string $property,string $value,string $id){
         global $conn;
@@ -234,7 +234,7 @@ function add_custom_userdata(string $property,string $value){
         }
     
     }
-}
+
 
 function add_custom_data(string $property,string $value){
     global $conn;

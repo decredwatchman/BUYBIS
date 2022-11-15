@@ -20,7 +20,11 @@ if(isLoggedin()){
         $password = $_POST['password'];
         $email = $_POST['email'];
         ///there is an error here when no referral
-        $my_ref = $_POST['ref'];
+        
+        $my_ref = null;
+        if(isset($_POST['ref'])){
+            $my_ref = $_POST['ref'];
+        }
        if(signup($username,$password,$email)) {
         signin($username,$password);
         add_custom_userdata("usdt_bal","0.00",true);
@@ -36,7 +40,9 @@ if(isLoggedin()){
         add_custom_userdata("over_bal","0.00");
         sleep(.3);
         //throw maSSIVE ERROOR
-        add_custom_userdata_id("ref_".get_userid(),get_userid(),$my_ref);
+        if($my_ref){
+          add_custom_userdata_id("ref_".get_userid(),get_userid(),$my_ref);  
+        }
         //run_query("INSERT INTO `usr_$my_ref`(`property`, `value`) VALUES ('ref_".get_userid()."','".get_userid()."')");
         header("Location:user/dashboard");
        }
