@@ -140,12 +140,15 @@ form button:hover{
 }
     </style>
 <?php include('nav.php');
+$location = "<script>
+window.location = './profile';</script>";
+
 
 if(isset($_POST['pay'])){
     $amt = $_POST['amount'];
     $per = $_POST['peer'];
 }else{
-  
+  echo $location;
 }
 // Deposit 0 : Withd
 if(isset($_POST['Deposit'])){

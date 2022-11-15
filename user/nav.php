@@ -1,15 +1,15 @@
   <?php
   include("../api/db_lib.php");
-  // if(isset($_GET['logout'])){
-  //   logout();
-  //   header("Location:./index");
+  if(isset($_GET['logout'])){
+    logout();
+    header("Location:../index");
     
-  //    };
+     };
 
 
-// if(isLoggedin()){
-//  header("Location:user/index");
-//     }
+if(!isLoggedin()){
+ header("Location:../index");
+    }
   ?>
    
    <style>
@@ -124,14 +124,14 @@
               </div>
               <div class="con1">   
                 
-                 <div class="tt"><a href="#" class="ltems" onclick="logout()">LOG OUT</a></div>
+                 <div class="tt"><a href="?logout=1" class="ltems" >LOG OUT</a></div>
                     
                 
                     <div class="list"><a href="index" class="items">HOME</a></div>
                 <div class="list"><a href="exchange" class="items">TRADE</a></div>
                 <div class="list"><a href="dashboard" class="items">WALLET</a></div>
                 <div class="list"><a href="profile" class="items">PROFILE</a></div>
-                <div class="list"><a href="#" class="items"  onclick="logout()">LOG OUT</a></div>
+                <div class="list"><a href="?logout=1" class="items"  >LOG OUT</a></div>
                 <!-- <div class="list  yellow"><a href="#" class="items yellow">Deposit</a></div> -->
               
 

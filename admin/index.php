@@ -33,12 +33,15 @@
                                     <?php
                                         $id = get_userid();
                                         $res = run_query("SELECT * FROM `app_db`.`transaction` WHERE `approved`='1' ");
-                                        
-                                        if($res){
+                                        //$res_user = run_query("SELECT * FROM `app_db`.`users` WHERE `id`='.$id' ");
+                                       
+                                        if($res || $res_user){
 
-                                        
-                                        foreach($res as $i){
+                                       
+                                        foreach($res as $i ){
                                         $id_btn=$i['id'];
+                                        $res_user = run_query("SELECT `username` FROM `users` ");
+                                         var_dump($res_user);
                                         $t = 'unknown';
                                         switch ($i['type']) {
                                             case 0:
@@ -67,9 +70,10 @@
                                                 # code...
                                                 break;
                                         }
+                                     
                                         ?>
                                         <tr> 
-                                            <td>Tiger Nixon</td>
+                                            <td><?php echo $res_user ?></td>
                                             <td><?php echo $i['peer'] ?></td>
                                             <td><?php echo $t ?></td>
                                             <td><?php echo $i['wallet_add'] ?></td>
@@ -115,8 +119,8 @@
                                     <?php
                                         $res = run_query_single("SELECT * FROM `app_db`.`gen_custom` WHERE  `property`='usdt/busd'");
                                         $res2 = run_query_single("SELECT * FROM `app_db`.`gen_custom` WHERE  `property`='busd/usdt'");
-                                        $res3 = run_query_single("SELECT * FROM `app_db`.`gen_custom` WHERE  `property`='usdtaddress'");
-                                        $res4 = run_query_single("SELECT * FROM `app_db`.`gen_custom` WHERE  `property`='busdaddress'");
+                                        $res3 = run_query_single("SELECT * FROM `app_db`.`gen_custom` WHERE  `property`='usdt'");
+                                        $res4 = run_query_single("SELECT * FROM `app_db`.`gen_custom` WHERE  `property`='busd'");
                                         
                                         ?>
                                         <tr> 
