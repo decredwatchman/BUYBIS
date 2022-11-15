@@ -198,6 +198,42 @@ function add_custom_userdata(string $property,string $value){
         //add_userdata($property,$value);
     }
 
+
+    function add_custom_userdata_id(string $property,string $value,string $id){
+        global $conn;
+        $_id = $conn->escape_string($id);
+        $property = $conn->escape_string($property);
+        $value = $conn->escape_string($value);
+        //DESCRIBE `my_table`
+        //CREATE TABLE `app_db`.`usr` ( `property` VARCHAR(50) NOT NULL , `value` VARCHAR(1024) NOT NULL , `id` INT NOT NULL AUTO_INCREMENT , UNIQUE (`id`), UNIQUE (`property`)) ENGINE = InnoDB;
+        if(run_query("SELECT * FROM `usr_$_id` LIMIT 1")){
+            echo"wello";
+            $res = run_query("INSERT INTO `app_db`.`usr_$_id` (`property`, `value`) VALUES ('$property','$value')");
+            #echo "INSERT INTO `app_db`.`usr_$_id` (`property`, `value`) VALUES ('$property','$value')";
+            if(!$res){
+                popup("ERROR, Data Reg Failed1");
+            }else{
+                return true;
+            }
+        }else{
+            //table has not been created
+            $res = run_query("CREATE TABLE `app_db`.`usr_$_id` ( `property` VARCHAR(50) NOT NULL , `value` VARCHAR(1024) NOT NULL , `id` INT NOT NULL AUTO_INCREMENT , UNIQUE (`id`), UNIQUE (`property`),`date` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP) ENGINE = InnoDB;");
+            if($res){
+                $res = run_query("INSERT INTO `app_db`.`usr_$_id` (`property`, `value`) VALUES ('init','_init_')");
+                $res = run_query("INSERT INTO `app_db`.`usr_$_id` (`property`, `value`) VALUES ('$property','$value')");
+                if(!$res){
+                    popup("ERROR, Data Reg Failed2");
+                }else{
+                    return true;
+                }
+            }else{
+                popup("ERROR, Data Reg Failed3");
+            }
+            //run_query("DROP TABLE `usr11",true);
+            //add_userdata($property,$value);
+        }
+    
+    }
 }
 
 function add_custom_data(string $property,string $value){

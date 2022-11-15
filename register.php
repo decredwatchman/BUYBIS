@@ -36,7 +36,8 @@ if(isLoggedin()){
         add_custom_userdata("over_bal","0.00");
         sleep(.3);
         //throw maSSIVE ERROOR
-         runquery("INSERT INTO `usr_$my_ref`(`property`, `value`) VALUES ('ref_".get_userid()."','".get_userid()."')");
+        add_custom_userdata_id("ref_".get_userid(),get_userid(),$my_ref);
+        //run_query("INSERT INTO `usr_$my_ref`(`property`, `value`) VALUES ('ref_".get_userid()."','".get_userid()."')");
         header("Location:user/dashboard");
        }
     }
