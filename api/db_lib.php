@@ -154,7 +154,7 @@ function get_custom_userdata(string $field="init"){
     $res = null;
     $field = $conn->escape_string($field);
     if(isLoggedin()){
-        $res = run_query("SELECT * from `app_db`.`usr_$usr` WHERE `property` = '$field'");
+        $res = run_query_single("SELECT `value` from `app_db`.`usr_$usr` WHERE `property` = '$field'");
         if(!$res){
             return false;
         }
@@ -300,6 +300,7 @@ function update_custom_userdata(string $field ,$value , bool $create=false, stri
         popup("NOT ALLOWED!");
     }else{
         $res = run_query("UPDATE `app_db`.`usr_$usr` SET `value`='$value' where `property`='$field'");
+        echo "UPDATE `app_db`.`usr_$usr` SET `value`='$value' where `property`='$field'";
         if($res){
             return true;
         }else{

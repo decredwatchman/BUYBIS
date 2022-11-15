@@ -24,7 +24,7 @@ function get_usdt_Bal()
 {
     $usr = get_userid();
     
-    $usdt = run_query_single("SELECT `value` FROM `usr_$usr` WHERE `property`='usdt'");
+    $usdt = run_query_single("SELECT `value` FROM `usr_$usr` WHERE `property`='usdt_bal'");
 
     if($usdt){
         return $usdt['value'];
@@ -36,7 +36,7 @@ function get_busd_Bal()
 {
     $usr = get_userid();
     
-    $busd = run_query_single("SELECT `value` FROM `usr_$usr` WHERE `property`='busd'");
+    $busd = run_query_single("SELECT `value` FROM `usr_$usr` WHERE `property`='busd_bal'");
 
     if($busd){
         return $busd['value'];

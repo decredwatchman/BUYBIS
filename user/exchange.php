@@ -140,11 +140,27 @@ form button:hover{
 <div class="wrapper">
       <header>SWAP</header>
   <?php
+
+  function getExtange(string $peer, int $amount)
+{
+    global $conn;
+    $peer = $conn->escape_string($peer);
+    $amount = $conn->escape_string($amount);
+    $ext = run_query_single("SELECT `value` FROM `gen_custom` WHERE `property`='$peer'")['value'];
+    if($ext){
+        return $amount*$ext;
+    }else{
+        return "0...";
+ 
+    }
+    # code...
+}
+
   function get_usdt_Bal()
   {
       $usr = get_userid();
       
-      $usdt = run_query_single("SELECT `value` FROM `usr_$usr` WHERE `property`='usdt'");
+      $usdt = run_query_single("SELECT `value` FROM `usr_$usr` WHERE `property`='usdt_bal'");
   
       if($usdt){
           return $usdt['value'];
@@ -156,10 +172,10 @@ form button:hover{
   {
       $usr = get_userid();
       
-      $busd = run_query_single("SELECT `value` FROM `usr_$usr` WHERE `property`='busd'");
+      $busd = run_query_single("SELECT `value` FROM `usr_$usr` WHERE `property`='busd_bal'");
   
       if($busd){
-          return $busd['value'];
+          return intval($busd['value']);
       }
       return 0;
       
@@ -167,12 +183,16 @@ form button:hover{
   function update_bal(){
 
   }
+  var_dump(intval(get_custom_userdata("busd_bal")['value']));//-$_POST['from'];
   if(isset($_POST['from'],$_POST['peer'])){
     if($_POST['peer']=="busd/usdt"){
-      if(get_busd_Bal()>=$_POST['from']){
+      
+      if( get_busd_Bal()>=$_POST['from']){
         // to do Update Balance
-        $res = update_custom_userdata("",100);
-        $res = run_query("");
+        //echo update_custom_userdata(field:"busd_bal","bumbum",true);
+        echo update_custom_userdata("busd_bal",intval(get_custom_userdata("busd_bal")['value'])-$_POST['from']);
+        echo update_custom_userdata("usdt_bal",getExtange($_POST['peer'],intval(get_custom_userdata("busd_bal")['value']))+$_POST['from']);
+
         if(true){
           popup("Extanged");
         }

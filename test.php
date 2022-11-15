@@ -7,9 +7,9 @@ include("api/db_lib.php");
 //var_dump(get_userdata_by_id(55));
 //add_custom_userdata("aaa","aaaa");
 #var_dump(run_query("SHOW TABLES LIKE 'usr_142'"))
-logout();
+//logout();
 // var_dump(get_core_userdata("username"));
 // //var_dump(get_custom_userdata());
 // //add_custom_userdata("Bal","500");
-// var_dump(update_custom_userdata("Bal","1000",true));
+var_dump(update_custom_userdata("busd_bal","1000"));
 ?>

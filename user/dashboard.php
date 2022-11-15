@@ -33,10 +33,10 @@ $ref_bal = get_custom_userdata("ref_bal");
 $usdt_bal = get_custom_userdata("usdt_bal");
 $busd_bal = get_custom_userdata("busd_bal");
 if($over){
-    $over = $over[0]['value'];
-    $ref_bal = $ref_bal[0]['value'];
-    $usdt_bal = $usdt_bal[0]['value'];
-    $busd_bal = $busd_bal[0]['value'];
+    $over = $over['value'];
+    $ref_bal = $ref_bal['value'];
+    $usdt_bal = $usdt_bal['value'];
+    $busd_bal = $busd_bal['value'];
 }else{
     $over =0;
     $ref_bal = 0;
