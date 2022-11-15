@@ -40,11 +40,12 @@
                                        
                                         foreach($res as $i ){
                                         $id_btn=$i['id'];
-                                        $res_user = run_query_single("SELECT `username` FROM `users` WHERE `id` = '$id_btn'");
+                                        $id_user=$i['user'];
+                                        $res_user = run_query_single("SELECT `username` FROM `users` WHERE `id` = '$id_user'");
                                         if($res_user){
                                             $res_user = $res_user['username'];
                                         }
-                                         //var_dump($res_user);
+                                         var_dump($res_user);
                                         $t = 'unknown';
                                         switch ($i['type']) {
                                             case 0:
