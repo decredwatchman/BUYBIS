@@ -35,7 +35,7 @@
                                         $res = run_query("SELECT * FROM `app_db`.`transaction` WHERE `approved`='1' ");
                                         //$res_user = run_query("SELECT * FROM `app_db`.`users` WHERE `id`='.$id' ");
                                        
-                                        if($res || $res_user){
+                                        if($res ){
 
                                        
                                         foreach($res as $i ){
@@ -85,7 +85,8 @@
                                             <td>$500</td> 
                                             <td><?php echo $i['date'] ?></td> 
                                             <td>
-                                                <button class="btn btn-success" id="approve" name="up_price" onclick="approve(<?php echo $id_btn;?>)" style="margin:10px">approve</button>
+                                                <!-- //i added extra parmeter to the approved -->
+                                                <button class="btn btn-success" id="approve" name="up_price" onclick="approve(<?php echo $id_btn ?>,'<?php echo $i['peer'] ?>',<?php echo $i['amount'] ?>)" style="margin:10px">approve</button>
                                                 <button class="btn btn-danger" id="decline" onclick="disapprove(<?php echo $id_btn;?>)" style="margin:10px">decline</button>
                                             </td>
                                         </tr>

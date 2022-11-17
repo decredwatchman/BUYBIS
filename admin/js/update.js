@@ -26,8 +26,8 @@ function update_extange_rate(field, a,b)
       
 }
 
-
-function approve(id){
+//added some parameter here 
+function approve(id,peer, amount){
     let xmlHttp = new XMLHttpRequest();
     xmlHttp.open( "POST", "updater.php", false ); 
     xmlHttp.onload = function() {
@@ -36,7 +36,7 @@ function approve(id){
     }
     xmlHttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     //xmlHttp.send();
-    xmlHttp.send("action=approveT&id="+id);
+    xmlHttp.send("action=approveT&id="+id+'peer='+amount);
     window.location.reload();  
     
 }

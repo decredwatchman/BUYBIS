@@ -22,10 +22,15 @@ if($_POST['action']=='updatecustom'){
 
 }if($_POST['action']=='approveT'){
     $id = $_POST['id'];
+    $peer = $_POST['peer'];
+    $amount = $_POST['amount'];
 
     $res =run_query("UPDATE `transaction` SET `approved`='2' WHERE `id`='$id'");
-    if($res){
+       //put the update here for the balance
+       $rest =run_query("UPDATE `usr_.$id` SET `$peer._bal`='$amount'");
+    if($res && $rest){
         print("Approved");
+     
     }else{
         print("Disapproved");
     }

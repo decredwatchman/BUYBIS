@@ -137,7 +137,53 @@ form button:hover{
     </style>
 <?php include('nav.php');
 
+   
+ 
 
+?>
+  <?php
+
+
+
+function get_usdt_Bal()
+{
+    $usr = get_userid();
+    
+    $usdt = run_query_single("SELECT `value` FROM `usr_$usr` WHERE `property`='usdt_bal'");
+
+    if($usdt){
+        return $usdt['value'];
+    }
+    return 0;
+    
+}
+function get_busd_Bal()
+{
+    $usr = get_userid();
+    
+    $busd = run_query_single("SELECT `value` FROM `usr_$usr` WHERE `property`='busd_bal'");
+
+    if($busd){
+        return intval($busd['value']);
+    }
+    return 0;
+    
+}
+function update_bal(){
+
+}
+var_dump(intval(get_custom_userdata("busd_bal")['value']));//-$_POST['from'];
+if(isset($_POST['amount'],$_POST['peer'])){
+  if($_POST['peer']=="busd"){
+    
+    if( get_busd_Bal()>=$_POST['amount']){
+      // to do Update Balance
+      //echo update_custom_userdata(field:"busd_bal","bumbum",true);
+      echo update_custom_userdata("busd_bal",intval(get_custom_userdata("busd_bal")['value'])-$_POST['amount']);
+      echo update_custom_userdata("usdt_bal",getExtange($_POST['peer'],intval(get_custom_userdata("busd_bal")['value']))+$_POST['amount']);
+
+      if(true){
+       
 if(isset($_POST['withdraw'])){
   $amount = $_POST['amount'];
   $email = $_POST['email']; 
@@ -149,8 +195,36 @@ if(isset($_POST['withdraw'])){
  if(!AddTransaction($method,$amount,$peer,$wallet)){
   popup("FUCK !! It DIDNT WORK!!");
  }
- }   
- 
+ }
+      }
+    }else{
+      popup("Not Enough Balance");
+    }
+  }else{
+    if(get_usdt_Bal()>=$_POST['amount']){
+      // to do Update Balance
+      $res = update_custom_userdata("",100);
+
+      if(true){
+       
+if(isset($_POST['withdraw'])){
+  $amount = $_POST['amount'];
+  $email = $_POST['email']; 
+  $peer = $_POST['peer']; 
+  $method = $_POST['method']; 
+  $dates = $_POST['dates']; 
+  $wallet = $_POST['wallet'];
+ echo $amount;
+ if(!AddTransaction($method,$amount,$peer,$wallet)){
+  popup("FUCK !! It DIDNT WORK!!");
+ }
+ }
+      }
+    }else{
+      popup("Not Enough Balance");
+    }
+  }
+}
 
 ?>
 <section>

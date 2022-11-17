@@ -46,7 +46,7 @@ $myid = get_userid();
                                         <h4 class="card-title" style="font-size: 18PX;color: rgb(105,108,112);font-family: Aldrich, sans-serif;">USERNAME: <?php echo $username ?></h4>
                                         <h4 class="card-title" style="font-size: 18PX;color: rgb(105,108,112);font-family: Aldrich, sans-serif;">REFFERALS: 3</h4>
                                         <div>
-                                            <input type="text" value="buybis.com/register?id=<?php echo $myid ?>" id="myInput" readonly>
+                                            <input type="text" value="buybis.org/register?id=<?php echo $myid ?>" id="myInput" readonly>
                                             <button onclick="myFunction()"><img height="25px"src="assets/svg/copy.svg"></button>
                                          <script>
                                             function myFunction() {
@@ -118,7 +118,7 @@ $myid = get_userid();
                                                 # code...
                                                 break;
                                             case 2:
-                                                $s = "APPROVED";
+                                                $s = "SUCCESS";
                                                 # code...
                                                 break;
                                         }
