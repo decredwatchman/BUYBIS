@@ -28,15 +28,17 @@
 <?php include('nav.php');
 
 
-$over = get_custom_userdata("over_bal");
+ $over = get_custom_userdata("over_bal");
 $ref_bal = get_custom_userdata("ref_bal");
 $usdt_bal = get_custom_userdata("usdt_bal");
 $busd_bal = get_custom_userdata("busd_bal");
+//$over = $busd_bal+$usdt_bal;
 if($over){
-    $over = $over['value'];
+//$over = $over['value'];
     $ref_bal = $ref_bal['value'];
     $usdt_bal = $usdt_bal['value'];
     $busd_bal = $busd_bal['value'];
+    $over = $busd_bal+$usdt_bal;
 }else{
     $over =0;
     $ref_bal = 0;

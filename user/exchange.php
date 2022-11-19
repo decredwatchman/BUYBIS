@@ -180,32 +180,36 @@ form button:hover{
       return 0;
       
   }
-  function update_bal(){
 
-  }
-  var_dump(intval(get_custom_userdata("busd_bal")['value']));//-$_POST['from'];
+ // popup($_POST['peer']);
+//   var_dump(intval(get_custom_userdata("busd_bal")['value']));//-$_POST['from'];
   if(isset($_POST['from'],$_POST['peer'])){
-    if($_POST['peer']=="busd/usdt"){
+    if($_POST['peer']=="BUSD/USDT"){
       
       if( get_busd_Bal()>=$_POST['from']){
         // to do Update Balance
-        //echo update_custom_userdata(field:"busd_bal","bumbum",true);
-        echo update_custom_userdata("busd_bal",intval(get_custom_userdata("busd_bal")['value'])-$_POST['from']);
-        echo update_custom_userdata("usdt_bal",getExtange($_POST['peer'],intval(get_custom_userdata("busd_bal")['value']))+$_POST['from']);
-
-        if(true){
+        $res = update_custom_userdata("busd_bal",intval(get_custom_userdata("busd_bal")['value'])-$_POST['from']);
+        $res2 =  update_custom_userdata("usdt_bal",intval(get_custom_userdata("usdt_bal")['value'])+getExtange($_POST['peer'],$_POST['from']));
+        if($res){
           popup("Extanged");
+        }else{
+          popup("Transaction error");
+
         }
       }else{
         popup("Not Enough Balance");
       }
     }else{
-      if(get_usdt_Bal()>=$_POST['from']){
+      if(get_usdt_Bal() >= $_POST['from']){
         // to do Update Balance
-        $res = update_custom_userdata("",100);
-
-        if(true){
+        //$res = update_custom_userdata("",100);
+        $res = update_custom_userdata("usdt_bal",intval(get_custom_userdata("usdt_bal")['value'])-$_POST['from']);
+        $res2 =  update_custom_userdata("busd_bal",intval(get_custom_userdata("busd_bal")['value'])+getExtange($_POST['peer'],$_POST['from']));
+        if($res){
           popup("Extanged");
+        }else{
+          popup("Transaction error");
+
         }
       }else{
         popup("Not Enough Balance");

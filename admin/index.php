@@ -45,7 +45,7 @@
                                         if($res_user){
                                             $res_user = $res_user['username'];
                                         }
-                                         var_dump($res_user);
+                                        
                                         $t = 'unknown';
                                         switch ($i['type']) {
                                             case 0:

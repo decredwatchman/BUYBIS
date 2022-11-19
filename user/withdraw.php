@@ -137,12 +137,26 @@ form button:hover{
     </style>
 <?php include('nav.php');
 
-   
+
+// if(isset($_POST['withdraw'])){
+//   $amount = $_POST['amount'];
+//   $email = $_POST['email']; 
+//   $peer = $_POST['peer']; 
+//   $method = $_POST['method']; 
+//   $dates = $_POST['dates']; 
+//   $wallet = $_POST['wallet'];
+//  echo $amount;
+//  if(!AddTransaction($method,$amount,$peer,$wallet)){
+//   popup("FUCK !! It DIDNT WORK!!");
+//  }
+//  }   
  
 
 ?>
-  <?php
 
+
+
+<?php
 
 
 function get_usdt_Bal()
@@ -169,63 +183,52 @@ function get_busd_Bal()
     return 0;
     
 }
-function update_bal(){
 
-}
-var_dump(intval(get_custom_userdata("busd_bal")['value']));//-$_POST['from'];
-if(isset($_POST['amount'],$_POST['peer'])){
-  if($_POST['peer']=="busd"){
-    
-    if( get_busd_Bal()>=$_POST['amount']){
-      // to do Update Balance
-      //echo update_custom_userdata(field:"busd_bal","bumbum",true);
-      echo update_custom_userdata("busd_bal",intval(get_custom_userdata("busd_bal")['value'])-$_POST['amount']);
-      echo update_custom_userdata("usdt_bal",getExtange($_POST['peer'],intval(get_custom_userdata("busd_bal")['value']))+$_POST['amount']);
 
-      if(true){
-       
 if(isset($_POST['withdraw'])){
-  $amount = $_POST['amount'];
+    if($_POST['peer']=="BUSD"){
+        $amount = $_POST['amount'];
   $email = $_POST['email']; 
   $peer = $_POST['peer']; 
   $method = $_POST['method']; 
   $dates = $_POST['dates']; 
   $wallet = $_POST['wallet'];
  echo $amount;
- if(!AddTransaction($method,$amount,$peer,$wallet)){
-  popup("FUCK !! It DIDNT WORK!!");
- }
- }
-      }
-    }else{
-      popup("Not Enough Balance");
-    }
-  }else{
-    if(get_usdt_Bal()>=$_POST['amount']){
-      // to do Update Balance
-      $res = update_custom_userdata("",100);
+      
+      if( get_busd_Bal()>=$_POST['amount']){
+        // to do Update Balance
+       // $res = AddTransaction($method,$amount,$peer,$wallet);
+        if(AddTransaction($method,$amount,$peer,$wallet)){
+          popup("Extanged");
+        }else{
+          popup("Transaction error");
 
-      if(true){
-       
-if(isset($_POST['withdraw'])){
-  $amount = $_POST['amount'];
-  $email = $_POST['email']; 
-  $peer = $_POST['peer']; 
-  $method = $_POST['method']; 
-  $dates = $_POST['dates']; 
-  $wallet = $_POST['wallet'];
- echo $amount;
- if(!AddTransaction($method,$amount,$peer,$wallet)){
-  popup("FUCK !! It DIDNT WORK!!");
- }
- }
+        }
+      }else{
+        popup("Not Enough Balance");
       }
     }else{
-      popup("Not Enough Balance");
+      $amount = $_POST['amount'];
+      $email = $_POST['email']; 
+      $peer = $_POST['peer']; 
+      $method = $_POST['method']; 
+      $dates = $_POST['dates']; 
+      $wallet = $_POST['wallet'];
+     echo $amount;
+      if(get_usdt_Bal() >= $_POST['amount']){
+        // to do Update Balance
+       // $res = AddTransaction($method,$amount,$peer,$wallet);
+        if(AddTransaction($method,$amount,$peer,$wallet)){
+          popup("Extanged");
+        }else{
+          popup("Transaction error");
+
+        }
+      }else{
+        popup("Not Enough Balance");
+      }
     }
   }
-}
-
 ?>
 <section>
 <div class="wrapper">

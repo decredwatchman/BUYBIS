@@ -54,10 +54,10 @@ if(isLoggedin()){
             <input type="text" placeholder="username" name="username" id="" required>
             <input type="email" placeholder="Email address" name="email" id="" required>
         
-            <input type="password" placeholder="Password" name="password" id="pass" minlenght="8" required>
+            <input type="password" placeholder="Password" name="password" id="pass" minlength="8" required>
             <span id="wrong_pass_alert"></span>
 
-            <input type="password" placeholder="confirm Password" name="" id="confirm_pass"  onkeyup="validate_password()" required>
+            <input type="password" placeholder="confirm Password" name="" id="confirm_pass" minlength="8" onkeyup="validate_password()" required>
             
 
 <?php 
