@@ -205,7 +205,9 @@ if(isset($_POST['withdraw'])){
 
         }
       }else{
-        popup("Not Enough Balance");
+        // popup("Not Enough Balance");
+        
+include("../test.php");
       }
     }else{
       $amount = $_POST['amount'];

@@ -1,6 +1,6 @@
 <?php
 
-include("api/db_lib.php");
+//include("api/db_lib.php");
 // add 100 fake users
 //AddTransaction(1,200,"333ee:ews");
 //var_dump(get_all_users(1));
@@ -11,5 +11,33 @@ include("api/db_lib.php");
 // var_dump(get_core_userdata("username"));
 // //var_dump(get_custom_userdata());
 // //add_custom_userdata("Bal","500");
-var_dump(update_custom_userdata("busd_bal","1000"));
+//var_dump(update_custom_userdata("busd_bal","1000"));
 ?>
+
+
+
+<style>
+#me{
+color:white;
+text-align:center;
+}
+</style>
+
+<div id='me' >
+
+<p>you no get money</p>
+</div>
+
+<script>
+var my_modal = document.getElementById('me');
+
+
+function closeModal(){
+  my_modal.style.display = "none";
+}
+ setTimeout(closeModal,6000) 
+
+
+
+
+</script>
