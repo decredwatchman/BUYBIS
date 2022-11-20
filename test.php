@@ -20,12 +20,16 @@
 #me{
 color:white;
 text-align:center;
+
+
+}
+p{
+
 }
 </style>
 
 <div id='me' >
-
-<p>you no get money</p>
+<p>insuffcient funds!!</p>
 </div>
 
 <script>
