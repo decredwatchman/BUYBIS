@@ -93,13 +93,13 @@
         </ol>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img class="d-block w-100" src="assets/img/s2.jpg" alt="First slide">
+            <img class="d-block w-100" src="assets/img/slide.jpg" alt="First slide">
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100" src="assets/img/s2.jpg" alt="Second slide">
+            <img class="d-block w-100" src="assets/img/slide.jpg" alt="Second slide">
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100" src="assets/img/s2.jpg" alt="Third slide">
+            <img class="d-block w-100" src="assets/img/slide.jpg" alt="Third slide">
           </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -130,6 +130,8 @@
 
 <script src="https://widgets.coingecko.com/coingecko-coin-list-widget.js"></script>
 </div>
+<script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/coinPriceBlock.js"></script><div id="coinmarketcap-widget-coin-price-block" coins="1,1027,825,1958,131" currency="USD" theme="light" transparent="false" show-symbol-logo="true"></div>
+<img src="assets/img/place.jpg" width="100%" alt="">
     <section class="showcase">
         <div class="container-fluid p-0">
             <div class="row no-gutters"><div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image:url('assets/img/s2.jpg');"><span></span></div>
