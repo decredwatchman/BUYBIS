@@ -27,7 +27,7 @@ function update_extange_rate(field, a,b)
 }
 
 //added some parameter here 
-function approve(id,peer, amount){
+function approve(id){
     let xmlHttp = new XMLHttpRequest();
     xmlHttp.open( "POST", "updater.php", false ); 
     xmlHttp.onload = function() {
@@ -36,7 +36,7 @@ function approve(id,peer, amount){
     }
     xmlHttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     //xmlHttp.send();
-    xmlHttp.send("action=approveT&id="+id+'peer='+amount);
+    xmlHttp.send("action=approveT&id="+id);
     window.location.reload();  
     
 }
@@ -50,6 +50,32 @@ function disapprove(id){
     xmlHttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     //xmlHttp.send();
     xmlHttp.send("action=getout&id="+id);
+    window.location.reload();  
+    
+}
+function disconfirm(id){
+    let xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "POST", "updater.php", false ); 
+    xmlHttp.onload = function() {
+        alert(this.responseText)  
+        // If you wanted to call the function in here, then just make another whole xhr var and send it in this function
+    }
+    xmlHttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    //xmlHttp.send();
+    xmlHttp.send("action=disconfirm&id="+id);
+    window.location.reload();  
+    
+}
+function confirm(id){
+    let xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "POST", "updater.php", false ); 
+    xmlHttp.onload = function() {
+        alert(this.responseText)  
+        // If you wanted to call the function in here, then just make another whole xhr var and send it in this function
+    }
+    xmlHttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    //xmlHttp.send();
+    xmlHttp.send("action=confirm&id="+id);
     window.location.reload();  
     
 }

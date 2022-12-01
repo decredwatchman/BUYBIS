@@ -42,6 +42,11 @@ section{
   padding: 0 10px;
   /* background: ; */
 }
+.WAKA{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 ::selection{
   color: #fff;
   background: #675AFE;
@@ -128,7 +133,7 @@ form button{
   color: #fff;
   font-size: 17px;
   cursor: pointer;
-  background: #007bff;
+  background: #030c3f;
   transition: 0.3s ease;
 }
 form button:hover{
@@ -136,7 +141,7 @@ form button:hover{
 }
     </style>
 <?php include('nav.php')?>
-<section>
+<section class="WAKA">
 <div class="wrapper">
       <header>SWAP</header>
   <?php
@@ -219,7 +224,6 @@ form button:hover{
 
   ?>
 
- 
       <form action="" method="post">
         <div class="amount">
         <p>Amount of :</p>

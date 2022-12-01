@@ -26,7 +26,7 @@
 
 <body>
 <?php include('nav.php');
-var_dump(get_core_userdata());
+//var_dump(get_core_userdata());
 //calculate the ammount of ref using user id
 
 $username = get_core_userdata("username");
@@ -37,7 +37,7 @@ if($username){
 $myid = get_userid();
 ?>
 
-                                <div class="col">
+                                <!-- <div class="col">
                                     <div class="card  mb-3">
                                         <div class="card-header py-3">
                                             <p class=" m-0 font-weight-bold">USER INFORMATION</p>
@@ -68,7 +68,7 @@ $myid = get_userid();
 
                                         </div>
 </div>
-                                     
+                                      -->
                                         <div class="card mb-4">
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold ">TRANSACTION</h6>
@@ -140,6 +140,7 @@ $myid = get_userid();
                             </div>
                         </div>
                     </div>
+                   
 
 
                                      <!-- DataTales Example -->

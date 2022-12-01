@@ -54,7 +54,7 @@ if($over){
         </div>
         <div class="card-body " style="height: auto;width: 100%;">
             <h4 class="card-title" style="font-size: 18PX;color: rgb(105,108,112);font-family: Aldrich, sans-serif;">WALLET OVERVIEW</h4>
-            <h4 class="card-title" style="line-height: 41px;letter-spacing: 2px;filter: blur(0px) brightness(14%) contrast(59%) grayscale(12%) hue-rotate(41deg);">$ <?php echo $over; ?>&nbsp;</h4>
+            <h4 class="card-title" style="line-height: 41px;letter-spacing: 2px;filter: blur(0px) brightness(14%) contrast(59%) grayscale(12%) hue-rotate(41deg);font-family: sans-serif;">$ <?php echo $over; ?>&nbsp;</h4>
             <h4 class="card-title" style="font-size: 12PX;color: rgb(105,108,112);font-family: Aldrich, sans-serif;">REFERRAL COMMISSION</h4>
             <h4 class="card-title" style=" font-size: 15PX;line-height: 21px;letter-spacing: 2px;filter: blur(0px) brightness(14%) contrast(59%) grayscale(12%) hue-rotate(41deg);">$ <?php echo $ref_bal; ?>&nbsp;</h4>
             

@@ -70,20 +70,99 @@
 }
 
 </style>
-<div class="nav-bar">
-                  <div class="nav-section">
-                        <div class="con1">
-                              <span class="logoo">Buybis</span>
-                        </div>
-                        <div class="con1">
-                              <!-- <div class="list  yellow"><a href="#" class="items yellow">Deposit</a></div>
-                              <div class="list"><a href="#" class="items">Withdraw</a></div>
-                              <div class="list"><a href="#" class="items">Send</a></div>
-                              <div class="list"><a href="#" class="items">Transfer</a></div> -->
-                              <div class="list"><a href="register" class="items">Register/login</a></div>
-                        </div>
-                  </div>
+<style>
+        nav {
+            font-family: sans-serif;
+        }
+    </style>
+    <nav class="navbar navbar-expand-lg navbar-light text-white p-2" style="background-color: #0c25dd;">
+        <div class="container  text-white fs-14 ">
+            <a class="navbar-brand  text-white" href="#">
+               Buybis
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active  text-white" aria-current="page" href="#">Buy With NGNR</a>
+                    </li>
+                    <li class="nav-item dropdown text-white">
+                        <a class="nav-link text-white dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Trade
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">Swap</a></li>
+                            <li><a class="dropdown-item" href="#">Swing</a></li>
+                            <li><a class="dropdown-item" href="#"> P2P Trading</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown text-white">
+                        <a class="nav-link text-white dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Earn
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">Swapman</a></li>
+                            <li><a class="dropdown-item" href="#">Swing</a></li>
+                            <li><a class="dropdown-item" href="#"> P2P Trading</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown text-white">
+                        <a class="nav-link text-white dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Forum
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">Swapman</a></li>
+                            <li><a class="dropdown-item" href="#">Swing</a></li>
+                            <li><a class="dropdown-item" href="#"> P2P Trading</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active  text-white" aria-current="page" href="#">BENEC</a>
+                    </li>
+                </ul>
+
             </div>
+
+            <div class="collapse navbar-collapse" id="navbarNavDropdown" style="flex-grow: 0;">
+                <ul class="navbar-nav text-white">
+                <li class="nav-item">
+                        <a class="nav-link active  text-white" aria-current="page" href="login">Login</a> / <a href="register">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active  text-white" aria-current="page" href="#">
+                            <svg viewBox="0 0 24 24" width="24" height="15" stroke="currentColor" stroke-width="2"
+                                fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+                                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                                <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active  text-white" aria-current="page" href="#">
+                            <svg viewBox="0 0 24 24" width="24" height="15" stroke="currentColor" stroke-width="2"
+                                fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="2" y1="12" x2="22" y2="12"></line>
+                                <path
+                                    d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                                </path>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
             
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -147,8 +226,34 @@
 
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
     <script src="assets/js/Simple-Slider.js"></script>
 </body>
 
 </html>
+
+
+<div class="body_">
+        <section>
+            <div class="pt-5 row w-100">
+                <div class="col-xl-3 col-sm-12">
+                    <img src="asset/img/buy.jpg"
+                        class="img-thumbnail mx-2" width="100%" />
+                </div>
+                <div class="col-xl-3 col-sm-12 banner_img">
+                    <img src="asset/img/buy.jpg"
+                        class="img-thumbnail mx-2" width="100%" />
+                </div>
+                <div class="col-xl-3 col-sm-12 banner_img">
+                    <img src="asset/img/buy.jpg"
+                        class="img-thumbnail mx-2" width="100%" />
+                </div>
+                <div class="col-xl-3 col-sm-12 banner_img">
+                    <img src="asset/img/buy.jpg"
+                        class="img-thumbnail mx-2" width="100%" />
+                </div>
+
+            </div>

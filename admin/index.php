@@ -86,7 +86,7 @@
                                             <td><?php echo $i['date'] ?></td> 
                                             <td>
                                                 <!-- //i added extra parmeter to the approved -->
-                                                <button class="btn btn-success" id="approve" name="up_price" onclick="approve(<?php echo $id_btn ?>,'<?php echo $i['peer'] ?>',<?php echo $i['amount'] ?>)" style="margin:10px">approve</button>
+                                                <button class="btn btn-success" id="approve" name="up_price" onclick="approve(<?php echo $id_btn; ?>)" style="margin:10px">approve</button>
                                                 <button class="btn btn-danger" id="decline" onclick="disapprove(<?php echo $id_btn;?>)" style="margin:10px">decline</button>
                                             </td>
                                         </tr>
@@ -177,6 +177,76 @@
                             </div>
                         </div>
                     </div>
+
+         
+                    <div class="container-fluid">
+            
+
+            <!-- Content Row -->
+
+            <!-- Page Heading -->
+            <h1 class="h3 mb-2 text-gray-800">verification</h1>
+            
+            <!-- DataTales Example -->
+            <div class="card shadow mb-4">
+                
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>username</th>
+                                    <th>id type</th>
+                                    <th>image of id</th>
+                                    <th>date</th>
+                                    <th>process</th>
+                                </tr>
+                            </thead>
+                      
+                            <tbody>
+                            <?php
+                                $id = get_userid();
+                                $res = run_query("SELECT * FROM `app_db`.`users` WHERE `banned`='0' ");
+                                //$res_user = run_query("SELECT * FROM `app_db`.`users` WHERE `id`='.$id' ");
+                               
+                                if($res ){
+
+                               
+                                foreach($res as $i ){
+                                $id_btn=$i['id'];
+                                $id_user=$i['id'];
+                                $res_user = run_query_single("SELECT `username` FROM `users` WHERE `id` = '$id_user'");
+                                if($res_user){
+                                    $res_user = $res_user['username'];
+                                }
+                                
+                        
+                             
+                                ?>
+                                <tr> 
+                                    <td><?php echo $res_user ?></td>
+                                    <td>passport</td>
+                                    <td><img src="img/id.jpeg" width="283px" height="178px" alt="" srcset=""></td>
+                                    <td><?php echo $i['date'] ?></td> 
+                                    <td>
+                                        <!-- //i added extra parmeter to the approved -->
+                                        <button class="btn btn-success" id="approve" name="up_price" onclick="confirm(<?php echo $id_btn; ?>)" style="margin:10px">approve</button>
+                                        <button class="btn btn-danger" id="decline" onclick="disconfirm(<?php echo $id_btn;?>)" style="margin:10px">decline</button>
+                                    </td>
+                                </tr>
+                                 <?php
+                                }}
+
+                                
+                                ?>
+                      
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+                    
 </div>
 <script src="./js/update.js"></script>
 <?php include('includes/footer.php'); ?>       

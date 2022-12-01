@@ -39,36 +39,14 @@ if($_POST['action']=='updatecustom'){
 
 }if($_POST['action']=='approveT'){
     $id = $_POST['id'];
-    $tx_id = $_POST['tx_id'];
 
-    $peer = $_POST['peer'];
-    $amount = $_POST['amount'];
-    $type = $_POST['type'];
-
-    $r = null;
-       //put the update here for the balance
-    switch ($type) {
-        case 'Deposit':
-        $r = update_custom_userdata($peer."_bal",get_Bal($peer,$id)+$amount,id:$id);
-
-            break;
-        
-        case 'Withdraw':
-            # code...
-            $r = update_custom_userdata($peer."_bal",get_Bal($peer,$id)-$amount,id:$id);
-            break;
-    }
-    echo $r;
-    
-    if($r){
-        print("Done");
-    run_query("UPDATE `transaction` SET `approved`='2' WHERE `id`='$tx_id'");
-
-     
+    $res =run_query("UPDATE `transaction` SET `approved`='2' WHERE `id`='$id'");
+    if($res){
+        print("approved");
     }else{
-        print("Failed");
-        
+        print("Error");
     }
+    
 
 }if($_POST['action']=='getout'){
     $id = $_POST['id'];
@@ -80,6 +58,24 @@ if($_POST['action']=='updatecustom'){
         print("Error");
     }
 
+}if($_POST['action']=='disconfirm'){
+    $id = $_POST['id'];
+
+    $res =run_query("UPDATE `user` SET `banned`='1' WHERE `id`='$id'");
+    if($res){
+        print("approved");
+    }else{
+        print("Error");
+    }
+}if($_POST['action']=='confirm'){
+    $id = $_POST['id'];
+
+    $res =run_query("UPDATE `user` SET `banned`='1' WHERE `id`='$id'");
+    if($res){
+        print("approved");
+    }else{
+        print("Error");
+    }
 }
 
 //}

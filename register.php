@@ -68,7 +68,7 @@ $ref = $_GET['id'];
 ?>
 
 
-            <button type="submit" id="create" name="register" class="signin">CREATE ACCOUNT</button>
+            <button type="submit" id="create" name="register" >CREATE ACCOUNT</button>
             <p class="account">Already have an account? <a href="login"> Login</a></p>
         </form>
     </section>
